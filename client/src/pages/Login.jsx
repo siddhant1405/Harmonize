@@ -1,0 +1,126 @@
+import React from "react";
+import { Link } from "react-router-dom";
+
+// Component Imports
+import Header from "../components/Header";
+import Footer from "../components/Footer";
+
+// Icon Imports
+import { FcGoogle } from "react-icons/fc";
+import { FaSpotify } from "react-icons/fa";
+
+// Asset Imports
+import authImage from "../assets/images/bg2.png";
+
+const Login = () => {
+  const handleGoogleLogin = () => {
+    console.log("Google Login initiated");
+  };
+
+  const handleSpotifyLogin = () => {
+    console.log("Spotify Login initiated");
+  };
+
+  const navLinks = [
+    { href: "/samples", label: "Sample Library" },
+    { href: "/about", label: "About Us" },
+    { href: "/", label: "home" },
+  ];
+
+  return (
+    <div className="relative w-full min-h-screen overflow-hidden font-sans bg-gradient-to-br from-[#050505] via-[#080808] to-[#0a0f1a]">
+      {/* Radial Glow Layers */}
+      <div className="fixed inset-0 z-0">
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,_rgba(37,99,235,0.12)_0%,_transparent_50%)]"></div>
+        <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_75%,_rgba(29,78,216,0.09)_0%,_transparent_50%)]"></div>
+      </div>
+
+      <Header navLinks={navLinks} ctaText="Sign Up" ctaHref="/signup" />
+
+      <main className="flex-grow flex flex-col md:flex-row">
+        {/* Left Column: Image with consistent background */}
+        <div className="hidden md:flex md:w-1/2 items-center justify-center p-12 relative">
+          <div className="absolute inset-0 bg-gradient-to-br from-[#050505] via-[#080808] to-[#0a0f1a] opacity-80"></div>
+          <img
+            src={authImage}
+            alt="A creative music production setup"
+            className="rounded-2xl shadow-2xl object-cover w-full h-full max-h-[700px] relative z-10"
+          />
+        </div>
+
+        {/* Right Column: Form */}
+        <div className="w-full md:w-1/2 flex flex-col items-center justify-center p-8">
+          <div className="w-full max-w-md">
+            <h1 className="text-4xl font-bold text-white text-center mb-4">
+              Welcome Back
+            </h1>
+            <p className="text-gray-400 text-center mb-8">
+              Log in to continue your creative journey.
+            </p>
+
+            {/* OAuth Buttons */}
+            <div className="flex flex-col gap-4 mb-6">
+              <button
+                onClick={handleGoogleLogin}
+                className="w-full flex items-center justify-center gap-3 bg-white text-gray-800 font-semibold py-3 rounded-lg hover:bg-gray-200 transition-all duration-300"
+              >
+                <FcGoogle size={24} />
+                Continue with Google
+              </button>
+              <button
+                onClick={handleSpotifyLogin}
+                className="w-full flex items-center justify-center gap-3 bg-[#1DB954] text-white font-semibold py-3 rounded-lg hover:bg-[#1ED760] transition-all duration-300"
+              >
+                <FaSpotify size={24} />
+                Continue with Spotify
+              </button>
+            </div>
+
+            {/* Divider */}
+            <div className="flex items-center my-6">
+              <div className="flex-grow border-t border-gray-700"></div>
+              <span className="flex-shrink mx-4 text-gray-500 text-sm">OR</span>
+              <div className="flex-grow border-t border-gray-700"></div>
+            </div>
+
+            {/* Email & Password Form */}
+            <form className="flex flex-col gap-4">
+              <input
+                type="email"
+                placeholder="Email"
+                className="px-4 py-3 rounded-lg bg-black/30 text-white border border-white/20 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+              />
+              <input
+                type="password"
+                placeholder="Password"
+                className="px-4 py-3 rounded-lg bg-black/30 text-white border border-white/20 focus:outline-none focus:ring-2 focus:ring-blue-500 transition-all"
+              />
+              <button
+                type="submit"
+                className="inline-block bg-gradient-to-r from-blue-500 to-blue-700 text-white px-10 py-3 rounded-xl font-semibold text-lg hover:from-blue-600 hover:to-blue-800 transition-all duration-300"
+              >
+                Log In
+              </button>
+            </form>
+
+            <div className="text-center mt-6">
+              <p className="text-gray-400">
+                New to Loop Labs?{" "}
+                <Link to="/signup" className="text-blue-400 hover:underline">
+                  Create an account
+                </Link>
+              </p>
+            </div>
+          </div>
+        </div>
+      </main>
+
+      <Footer
+        tagline="A global community, built by and for creators."
+        links={[{ href: "#", label: "Privacy" }, { href: "#", label: "Terms" }]}
+      />
+    </div>
+  );
+};
+
+export default Login;
