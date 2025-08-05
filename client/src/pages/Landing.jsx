@@ -26,7 +26,7 @@ import {
 
 const Landing = () => {
   const navLinks = [
-    { href: "#what-is-loop-labs", label: "What is Loop Labs?" },
+    { href: "#what-is-loop-labs", label: "What is Loop Labs" },
     { href: "#features", label: "Features" },
     { href: "/samples", label: "Sample Library" },
     { href: "/about", label: "About Us" },
@@ -74,7 +74,7 @@ const Landing = () => {
 
       <section id="what-is-loop-labs" className="relative z-10 py-20 px-6">
         <div className="max-w-5xl mx-auto text-center">
-          <h2 className="text-white text-4xl md:text-5xl font-bold mb-6" data-aos="fade-up">What is Loop</h2>
+          <h2 className="text-white text-4xl md:text-5xl font-bold mb-6" data-aos="fade-up">What is Loop Labs?</h2>
           <p className="text-gray-300 text-lg leading-relaxed mb-16 max-w-3xl mx-auto" data-aos="fade-up" data-aos-delay="100">
             <span className="text-blue-400 font-semibold">Loop Labs</span> is the creative heartbeat for producers, artists, and songwriters. We're a platform built on the idea that the best music happens when we come together.
           </p>

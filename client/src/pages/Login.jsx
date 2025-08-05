@@ -24,7 +24,6 @@ const Login = () => {
   const navLinks = [
     { href: "/samples", label: "Sample Library" },
     { href: "/about", label: "About Us" },
-    { href: "/", label: "home" },
   ];
 
   return (
@@ -37,15 +36,14 @@ const Login = () => {
 
       <Header navLinks={navLinks} ctaText="Sign Up" ctaHref="/signup" />
 
-      <main className="flex-grow flex flex-col md:flex-row">
-        {/* Left Column: Image with consistent background */}
-        <div className="hidden md:flex md:w-1/2 items-center justify-center p-12 relative">
-          <div className="absolute inset-0 bg-gradient-to-br from-[#050505] via-[#080808] to-[#0a0f1a] opacity-80"></div>
-          <img
-            src={authImage}
-            alt="A creative music production setup"
-            className="rounded-2xl shadow-2xl object-cover w-full h-full max-h-[700px] relative z-10"
-          />
+      <main className="flex-grow flex flex-col md:flex-row relative z-10">
+        {/* Left Column: Full background */}
+        <div
+          className="hidden md:flex md:w-1/2 relative bg-cover bg-center"
+          style={{ backgroundImage: `url(${authImage})` }}
+        >
+          {/* Dark overlay */}
+          <div className="absolute inset-0 bg-gradient-to-br from-[#050505]/80 via-[#080808]/80 to-[#0a0f1a]/80"></div>
         </div>
 
         {/* Right Column: Form */}
@@ -117,7 +115,7 @@ const Login = () => {
 
       <Footer
         tagline="A global community, built by and for creators."
-        links={[{ href: "#", label: "Privacy" }, { href: "#", label: "Terms" }]}
+        links={[{ href: "#", label: "Privacy" }, { href: "#", label: "Terms" }, { href: "#", label: "Support" }, { href: "#", label: "Contact" }]}
       />
     </div>
   );
