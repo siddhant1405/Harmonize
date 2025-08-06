@@ -77,7 +77,7 @@ const Landing = () => {
           </p>
           <div className="flex flex-col md:flex-row gap-8 justify-center items-stretch mt-6">
             {/* Other Platforms */}
-            <div className="bg-white/5 backdrop-blur-sm border border-red-500/30 rounded-xl p-8 max-w-md w-full">
+           <div className="bg-white/5 backdrop-blur-sm border border-red-500/30 rounded-xl p-8 max-w-md w-full transition-all duration-300 hover:-translate-y-2 hover:bg-white/10 hover:shadow-[0_0_25px_rgba(239,68,68,0.3)]">
               <h4 className="text-red-400 font-bold mb-4 text-xl">Other Platforms</h4>
               <ul className="text-gray-400 text-left text-lg space-y-4">
                 <li className="flex items-center"><FaTimesCircle className="mr-3 text-red-500" /> Isolated File Dumping</li>
@@ -88,9 +88,9 @@ const Landing = () => {
             </div>
 
             {/* Loop Labs */}
-            <div className="bg-white/5 backdrop-blur-sm border border-green-400/40 rounded-xl p-8 max-w-md w-full">
+            <div className="bg-white/5 backdrop-blur-sm border border-green-400/40 rounded-xl p-8 max-w-md w-full transition-all duration-300 hover:-translate-y-2 hover:border-green-400 hover:bg-white/10 hover:shadow-[0_0_25px_rgba(34,197,94,0.3)]">
               <h4 className="text-green-400 font-bold mb-4 text-xl">Loop Labs</h4>
-              <ul className="text-green-200 text-left text-lg space-y-4">
+              <ul className="text-green-200 text-left text-lg space-y-4 ">
                 <li className="flex items-center"><FaCheckCircle className="mr-3 text-green-400" /> Thriving, Collaborative Hub</li>
                 <li className="flex items-center"><FaCheckCircle className="mr-3 text-green-400" /> Upvotes, Comments & Engaging Forums</li>
                 <li className="flex items-center"><FaCheckCircle className="mr-3 text-green-400" /> Live Genre Rooms for Real-Time Collabs</li>

@@ -1,5 +1,5 @@
 import React from "react";
-import { Link } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 // Component Imports
 import Header from "../components/Header";
@@ -13,14 +13,34 @@ import { FaSpotify } from "react-icons/fa";
 import authImage from "../assets/images/bg2.png";
 
 const Signup = () => {
+  const navigate = useNavigate();
+
+  // --- Signup Logic ---
+  const handleSubmit = (e) => {
+    e.preventDefault();
+    // **
+    // ** 1. ADD YOUR BACKEND API CALL HERE for user registration **
+    // **
+    // 2. On success, redirect to the sample library
+    console.log("Signup successful, redirecting...");
+    navigate("/samples");
+  };
+
   const handleGoogleSignup = () => {
+    // 1. Initiate Google OAuth flow
     console.log("Google Signup initiated");
+    // 2. On successful callback, redirect
+    navigate("/samples");
   };
 
   const handleSpotifySignup = () => {
+    // 1. Initiate Spotify OAuth flow
     console.log("Spotify Signup initiated");
+    // 2. On successful callback, redirect
+    navigate("/samples");
   };
 
+  // --- Component Nav Links ---
   const navLinks = [
     { href: "/samples", label: "Sample Library" },
     { href: "/about", label: "About Us" },
@@ -45,7 +65,7 @@ const Signup = () => {
           <div className="absolute inset-0 bg-gradient-to-br from-[#050505]/80 via-[#080808]/80 to-[#0a0f1a]/80"></div>
         </div>
 
-        {/* Right Column: Form (with fixes) */}
+        {/* Right Column: Form */}
         <div className="w-full md:w-1/2 flex flex-col items-center justify-center p-4 sm:p-6 md:p-8">
           <div className="w-full max-w-md">
             <h1 className="text-3xl md:text-4xl font-bold text-white text-center mb-2 md:mb-4">
@@ -81,20 +101,23 @@ const Signup = () => {
             </div>
 
             {/* Email & Password Form */}
-            <form className="flex flex-col gap-3">
+            <form className="flex flex-col gap-3" onSubmit={handleSubmit}>
               <input
                 type="text"
                 placeholder="Username"
+                required
                 className="px-4 py-2.5 rounded-lg bg-black/30 text-white border border-white/20 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
               <input
                 type="email"
                 placeholder="Email"
+                required
                 className="px-4 py-2.5 rounded-lg bg-black/30 text-white border border-white/20 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
               <input
                 type="password"
                 placeholder="Password"
+                required
                 className="px-4 py-2.5 rounded-lg bg-black/30 text-white border border-white/20 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
               <button
