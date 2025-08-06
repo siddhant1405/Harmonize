@@ -5,6 +5,7 @@ import SignUp from "./pages/SignUp";
 import Samples from "./pages/SampleLibrary";
 import Community from "./pages/CommunityPage";
 import About from "./pages/AboutUs";
+import Profile from "./pages/Profile";
 
 
 function App() {
@@ -16,6 +17,7 @@ function App() {
       <Route path="/samples" element={<Samples />} />
       <Route path="/community" element={<Community />} />
       <Route path="/about" element={<About />} />
+      <Route path="/profile" element={<Profile />} />
     </Routes>
   );
 }

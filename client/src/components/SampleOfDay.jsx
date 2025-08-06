@@ -18,8 +18,8 @@ const SampleOfDay = ({
     if (waveformRef.current && audioUrl) {
      wavesurferRef.current = WaveSurfer.create({
       container: waveformRef.current,
-      waveColor: "#867fd6ff",    // Blue for unplayed waveform
-      progressColor: "#2563eb", // White for played (progress) waveform
+      waveColor: "#c1c1c1ff",    // Blue for unplayed waveform
+      progressColor: "#1c47a4ff", // White for played (progress) waveform
       backgroundColor: "transparent",
       height: 80,
       barWidth: 3,
