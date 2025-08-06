@@ -12,10 +12,12 @@
   "dependencies": {
     "@wavesurfer/react": "^1.0.11",
     "framer-motion": "^12.23.12",
+    "lucide-react": "^0.536.0",
     "react": "^19.1.0",
     "react-dom": "^19.1.0",
     "react-icons": "^5.5.0",
     "react-router-dom": "^7.6.2",
+    "react-transition-group": "^4.4.5",
     "wavesurfer.js": "^7.10.1"
   },
   "devDependencies": {

@@ -25,27 +25,28 @@ const Login = () => {
 
     // 2. On success, redirect to the sample library
     console.log("Login successful, redirecting...");
-    navigate("/samples");
+    navigate("/community");
   };
 
   const handleGoogleLogin = () => {
     // 1. Initiate Google OAuth flow
     console.log("Google Login initiated");
     // 2. On successful callback from Google, redirect
-    navigate("/samples");
+    navigate("/community");
   };
 
   const handleSpotifyLogin = () => {
     // 1. Initiate Spotify OAuth flow
     console.log("Spotify Login initiated");
     // 2. On successful callback from Spotify, redirect
-    navigate("/samples");
+    navigate("/community");
   };
 
   // --- Component Nav Links ---
   const navLinks = [
     { href: "/samples", label: "Sample Library" },
     { href: "/about", label: "About Us" },
+    { href: "/profile", label: "Profile" },
   ];
 
   return (
