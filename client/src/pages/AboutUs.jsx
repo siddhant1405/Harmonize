@@ -6,7 +6,9 @@ import devImage from "../assets/images/dev.jpg"; // Your developer image
 const AboutUs = () => {
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/samples", label: "Sample Library" },
+    { href: "/community", label: "The Community" },
+    { href: "/features", label: "Features" },
+    { href: "/signup", label: "Sign Up" },
   ];
 
   return (
@@ -17,7 +19,7 @@ const AboutUs = () => {
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_75%,_rgba(29,78,216,0.09)_0%,_transparent_50%)]"></div>
       </div>
 
-      <Header navLinks={navLinks} ctaText="Sign Up" ctaHref="/signup" />
+      <Header navLinks={navLinks} ctaText="Join Now" ctaHref="/signup" />
 
       {/* Main Content */}
       <main className="relative z-10 max-w-6xl mx-auto px-6 pt-32 pb-20">
@@ -27,55 +29,56 @@ const AboutUs = () => {
             CREATE. CONNECT. COLLABORATE.
           </h1>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            Loop Labs isn't just another music platform—it’s the epicenter of sonic innovation. 
-            A space where a single loop can spark a global movement, and every beat has the potential 
-            to become legendary.
+            Collab Cloud is not just another platform—it’s where creators connect, share, and build together. 
+            Whether you're a producer, vocalist, or mixer, our community and tools are designed to amplify your creative process.
           </p>
         </div>
 
-        {/* The Dev's Vision */}
+        {/* The Developer's Vision */}
         <div className="mb-20 bg-white/5 backdrop-blur-sm border border-blue-500/20 rounded-xl p-10 transition-all duration-300 hover:bg-white/10 hover:border-blue-400/40 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)]">
           <h2 className="text-4xl font-bold text-center mb-8 text-blue-400 drop-shadow-[0_0_15px_rgba(59,130,246,0.3)]">
             The Developer's Vision
           </h2>
           <p className="text-gray-300 text-lg leading-relaxed max-w-4xl mx-auto text-center">
-            Loop Labs was born from a simple thought: <span className="text-white font-semibold">“What if sharing a loop could start a conversation, 
-            and that conversation could turn into a hit record?”</span> As a developer and a hobbyist music producer, 
-            I’ve seen the challenges of collaboration—lost files, messy DMs, endless scrolling through generic sample packs.
+            Collab Cloud was born out of a simple question: "What if collaboration was seamless and music production was built around a true community?" 
+            As a developer and passionate music producer, I experienced the struggles firsthand—disorganized projects, lost files, and missed creative opportunities. 
           </p>
           <p className="text-gray-300 text-lg leading-relaxed max-w-4xl mx-auto text-center mt-6">
-            I wanted to fix that. Not with just another sample library, but with a **creative ecosystem**. A place where 
-            you don’t just download sounds—you **flip them, repost your versions, and build a chain of creativity** that 
-            loops across the globe. A platform where music is more than content; it’s a conversation.
+            I still remember making a beat where I envisioned an electric guitar outro. I had no idea where to find a guitarist or even a place to ask for feedback on the track. 
+            That frustration stayed with me and pushed me to think about how many other creators face the same wall.
+          </p>
+          <p className="text-gray-300 text-lg leading-relaxed max-w-4xl mx-auto text-center mt-6">
+            This platform isn’t just a tool for sharing music—it’s a space for creative partnerships, where every user is part of a greater community. 
+            It's about finding the right collaborators, sharing feedback, and making music that transcends borders.
           </p>
           <p className="text-gray-300 text-lg leading-relaxed max-w-4xl mx-auto text-center mt-6 italic">
-            This is not just a tool. It’s a movement—for producers who want to be heard, for artists who want real connections, 
-            and for anyone who believes that collaboration is the future of music.
+            Collab Cloud is a movement—for producers who want to collaborate easily, for vocalists who want to get heard, and for mixers who want to bring creative visions to life. 
+            Collaboration isn’t an afterthought here—it’s the heart of everything.
           </p>
         </div>
 
-        {/* What Makes Us Different */}
+        {/* What Makes Collab Cloud Different */}
         <div className="mb-20">
           <h2 className="text-4xl font-bold mb-12 text-center text-white drop-shadow-[0_0_15px_rgba(59,130,246,0.3)]">
-            What Makes Loop Labs Different
+            What Makes Collab Cloud Different
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-white/5 backdrop-blur-sm border border-blue-500/20 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 hover:border-blue-400/40 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] text-center">
-              <h3 className="text-xl font-semibold text-blue-400 mb-3">Built on Feedback</h3>
+              <h3 className="text-xl font-semibold text-blue-400 mb-3">Community-Driven</h3>
               <p className="text-gray-300 text-sm">
-                Every feature comes from real-world struggles of creators—this isn’t theory, it’s lived experience.
+                With features like a Reddit-style feed, genre challenges, and feedback loops, the platform fosters real community engagement.
               </p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-blue-500/20 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 hover:border-blue-400/40 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] text-center">
-              <h3 className="text-xl font-semibold text-yellow-400 mb-3">Flip & Repost Loop</h3>
+              <h3 className="text-xl font-semibold text-yellow-400 mb-3">Smart Collab Matchmaking</h3>
               <p className="text-gray-300 text-sm">
-                Download a loop, make it yours, and share it back. Creativity is a cycle—keep the loop alive.
+                Our platform’s role-based matchmaking ensures you’ll connect with the right collaborators, based on your needs and musical style.
               </p>
             </div>
             <div className="bg-white/5 backdrop-blur-sm border border-blue-500/20 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 hover:border-blue-400/40 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] text-center">
-              <h3 className="text-xl font-semibold text-pink-400 mb-3">Global Collaboration</h3>
+              <h3 className="text-xl font-semibold text-pink-400 mb-3">Simplified Project Management</h3>
               <p className="text-gray-300 text-sm">
-                Connect with artists and producers worldwide. Geography is dead. Music has no borders here.
+                Keep your projects organized with smart DMs, inline audio sharing, and project tracking tools—streamlining your collaboration from idea to final track.
               </p>
             </div>
           </div>
@@ -94,9 +97,8 @@ const AboutUs = () => {
               <h3 className="text-2xl font-semibold text-white mb-2">Siddhant Gupta</h3>
               <p className="text-blue-400 text-md mb-4">Full Stack Developer • Music Producer</p>
               <p className="text-gray-300 text-base mb-6">
-                “Hey reader, I built Loop Labs to merge two passions: **music and technology**. This platform is my way of 
-                giving back to the producer community by making collaboration easier, creativity accessible, and music 
-                creation more fun for everyone.”
+                As a music producer and developer, Collab Cloud is my way of merging two passions: technology and music. 
+                This platform is all about removing barriers for creators and making the collaboration process easier, faster, and more rewarding.
               </p>
               <div className="flex justify-center gap-4">
                 {/* LinkedIn Button */}
@@ -137,34 +139,33 @@ const AboutUs = () => {
             Ready to Make Music History?
           </h2>
           <p className="text-gray-300 text-lg mb-8 max-w-3xl mx-auto">
-            Join producers who are already collaborating, learning, and creating 
-            the next generation of hits. Your sound could be the missing piece in someone’s 
-            masterpiece—and theirs could be the key to yours.
+            Join producers, vocalists, and mixers who are already collaborating, learning, and creating the next generation of hits. 
+            Your next hit starts with your next connection.
           </p>
           <div className="flex justify-center gap-4 flex-wrap">
             <a
               href="/signup"
               className="inline-block bg-gradient-to-r from-blue-500 to-blue-700 text-white px-10 py-4 rounded-xl font-semibold text-lg hover:scale-105 hover:shadow-[0_0_30px_#2563eb] transition-all duration-300"
             >
-              Start Creating Today
+              Sign Up Now
             </a>
             <a
-              href="/samples"
+              href="/community"
               className="inline-block bg-white/10 border border-blue-500/20 text-white px-10 py-4 rounded-xl font-semibold text-lg hover:scale-105 hover:bg-white/20 transition-all duration-300"
             >
-              Explore Samples
+              Visit The Community
             </a>
           </div>
         </div>
       </main>
 
       <Footer
-        tagline="Loop Labs | Where every loop tells a story."
+        tagline="Collab Cloud | Where creators meet and build."
         links={[
           { href: "/privacy", label: "Privacy" },
           { href: "/terms", label: "Terms" },
+          { href: "/support", label: "Support" },
           { href: "/contact", label: "Contact" },
-          { href: "/careers", label: "Careers" },
         ]}
       />
     </div>

@@ -7,7 +7,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 
 // Asset Imports (using placeholders, replace with actual imports)
-import profileImg from "../assets/images/img2.jpg";
+import profileImg from "../assets/images/producer.jpg";
 import bannerImg from "../assets/images/bg.jpg";
 
 // --- Enhanced Placeholder Data ---

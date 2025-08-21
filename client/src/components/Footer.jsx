@@ -8,7 +8,7 @@ const Footer = ({ links }) => {
       <div className="max-w-6xl mx-auto text-center">
         {/* Single-line copyright */}
         <p className="text-gray-400 text-sm mb-4">
-          © {currentYear} <span className="font-semibold text-white">Loop Labs</span> | All Rights Reserved
+          © {currentYear} <span className="font-semibold text-white">Collab Cloud</span> | All Rights Reserved
         </p>
 
         {/* Links in a single row */}

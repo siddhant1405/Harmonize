@@ -11,10 +11,10 @@ const Header = ({ navLinks, ctaText, ctaHref }) => {
         <Link to="/" className="flex items-center">
           <img
             src={logoImg}
-            alt="Loop Labs Logo"
+            alt="Collab Cloud Logo"
             className="h-10 w-auto mr-2"
           />
-          <span className="text-white font-bold text-2xl tracking-wide">Loop Labs</span>
+          <span className="text-white font-bold text-2xl tracking-wide">Collab Cloud</span>
         </Link>
 
         {/* Navigation + CTA */}
