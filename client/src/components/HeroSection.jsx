@@ -21,7 +21,7 @@ const Hero = ({ title, subtitle, description, primaryCTA, secondaryCTA }) => {
       {/* Centered Content */}
       <div className="relative z-20 px-6 flex flex-col items-center max-w-4xl">
         {/* Main Title */}
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white mb-4 leading-tight drop-shadow-[0_0_25px_rgba(59,130,246,0.5)]">
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold text-white mb-4 leading-tight"> 
           {title}
         </h1>
 

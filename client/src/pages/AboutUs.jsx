@@ -29,7 +29,7 @@ const AboutUs = () => {
             CREATE. CONNECT. COLLABORATE.
           </h1>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
-            Collab Cloud is not just another platform—it’s where creators connect, share, and build together. 
+            Harmonize is not just another platform—it’s where creators connect, share, and build together. 
             Whether you're a producer, vocalist, or mixer, our community and tools are designed to amplify your creative process.
           </p>
         </div>
@@ -40,7 +40,7 @@ const AboutUs = () => {
             The Developer's Vision
           </h2>
           <p className="text-gray-300 text-lg leading-relaxed max-w-4xl mx-auto text-center">
-            Collab Cloud was born out of a simple question: "What if collaboration was seamless and music production was built around a true community?" 
+            Harmonize was born out of a simple question: "What if collaboration was seamless and music production was built around a true community?" 
             As a developer and passionate music producer, I experienced the struggles firsthand—disorganized projects, lost files, and missed creative opportunities. 
           </p>
           <p className="text-gray-300 text-lg leading-relaxed max-w-4xl mx-auto text-center mt-6">
@@ -52,15 +52,15 @@ const AboutUs = () => {
             It's about finding the right collaborators, sharing feedback, and making music that transcends borders.
           </p>
           <p className="text-gray-300 text-lg leading-relaxed max-w-4xl mx-auto text-center mt-6 italic">
-            Collab Cloud is a movement—for producers who want to collaborate easily, for vocalists who want to get heard, and for mixers who want to bring creative visions to life. 
+            Harmonize is a movement—for producers who want to collaborate easily, for vocalists who want to get heard, and for mixers who want to bring creative visions to life. 
             Collaboration isn’t an afterthought here—it’s the heart of everything.
           </p>
         </div>
 
-        {/* What Makes Collab Cloud Different */}
+        {/* What Makes Harmonize Different */}
         <div className="mb-20">
           <h2 className="text-4xl font-bold mb-12 text-center text-white drop-shadow-[0_0_15px_rgba(59,130,246,0.3)]">
-            What Makes Collab Cloud Different
+            What Makes Harmonize Different
           </h2>
           <div className="grid md:grid-cols-3 gap-6">
             <div className="bg-white/5 backdrop-blur-sm border border-blue-500/20 rounded-xl p-6 hover:bg-white/10 transition-all duration-300 hover:border-blue-400/40 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] text-center">
@@ -97,7 +97,7 @@ const AboutUs = () => {
               <h3 className="text-2xl font-semibold text-white mb-2">Siddhant Gupta</h3>
               <p className="text-blue-400 text-md mb-4">Full Stack Developer • Music Producer</p>
               <p className="text-gray-300 text-base mb-6">
-                As a music producer and developer, Collab Cloud is my way of merging two passions: technology and music. 
+                As a music producer and developer, Harmonize is my way of merging two passions: technology and music. 
                 This platform is all about removing barriers for creators and making the collaboration process easier, faster, and more rewarding.
               </p>
               <div className="flex justify-center gap-4">
@@ -160,7 +160,7 @@ const AboutUs = () => {
       </main>
 
       <Footer
-        tagline="Collab Cloud | Where creators meet and build."
+        tagline="Harmonize | Where creators meet and build."
         links={[
           { href: "/privacy", label: "Privacy" },
           { href: "/terms", label: "Terms" },

@@ -5,7 +5,7 @@ import { motion } from "framer-motion";
 import Header from "../components/Header";
 import Hero from "../components/HeroSection";
 import Footer from "../components/Footer";
-import ProducerOfTheWeek from "../components/ProducerOfTheWeek";
+
 
 // Assets
 import sample1 from "../assets/sample/sample1.mp3";
@@ -28,10 +28,10 @@ import {
 
 const Landing = () => {
   const navLinks = [
-    { href: "#what-is-loop-labs", label: "What is Collab Cloud" },
+    { href: "#what-is-loop-labs", label: "What is Harmonize" },
     { href: "#features", label: "Features" },
     { href: "/about", label: "About Us" },
-    { href: "/community", label: "The Community" },
+    { href: "/community", label: "Visit the Community" },
     { href: "/login", label: "Login" },
   ];
 
@@ -54,14 +54,14 @@ const Landing = () => {
       title: "Smart DMs",
       description:
         "Artist-focused chat with inline audio sharing, pinned project notes (BPM, key, deadlines), collab status tracking, and file version control. Everything organized.",
-      icon: <FaComments size={36} className="text-pink-400 mb-4" />,
+      icon: <FaComments size={36} className="text-purple-400 mb-4" />,
       highlights: ["Inline Audio Sharing", "Project Status Tracking", "File Version Control"]
     },
     {
       title: "Artist Profiles",
       description:
         "Showcase your top 5 tracks, display your skills and what you're looking for. Build trust with badges and achievements. One-click collab requests from any profile.",
-      icon: <FaUserCircle size={36} className="text-purple-400 mb-4" />,
+      icon: <FaUserCircle size={36} className="text-yellow-400 mb-4" />,
       highlights: ["Portfolio Showcase", "Achievement Badges", "Direct Collab Requests"]
     },
   ];
@@ -79,20 +79,20 @@ const Landing = () => {
       description: "Share your productions, find vocalists for your tracks, collaborate on instrumentals, and get your music heard by the right artists. Connect with other producers to exchange ideas and elevate your craft.",
       image: prodImage,
       color: "blue",
-      testimonial: "“I found a vocalist for my track in just two days on Collab Cloud.”"
+      testimonial: "“I found a vocalist for my track in just two days on Harmonize.”"
     },
     {
       title: "Vocalists & Songwriters",
       description: "Find the perfect productions for your vocals, collaborate with producers worldwide, share your melodies, and transform your ideas into complete songs. Build lasting creative partnerships.",
       image: writerImage,
-      color: "purple",
+      color: "blue",
       testimonial: "“The smart DMs made finishing a song with a producer overseas seamless.”"
     },
     {
       title: "Musicians & Engineers",
       description: "Add live instrumentation to digital productions, mix and master collaborative projects, and connect with artists who need your technical expertise. Bring professional polish to every collaboration.",
       image: engineerImage,
-      color: "green",
+      color: "blue",
       testimonial: "“A great place to find new artists and lend my mixing skills.”"
     }
   ];
@@ -109,23 +109,23 @@ const Landing = () => {
   return (
     <div className="relative w-full overflow-hidden font-sans bg-gradient-to-br from-[#050505] via-[#080808] to-[#0a0f1a]">
       {/* Background Glow */}
-      <div className="fixed inset-0 z-0">
+      {/* <div className="fixed inset-0 z-0">
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,_rgba(37,99,235,0.12)_0%,_transparent_50%)]"></div>
         <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_75%,_rgba(29,78,216,0.09)_0%,_transparent_50%)]"></div>
-      </div>
+      </div> */}
 
       <Header navLinks={navLinks} ctaText="Join Now" ctaHref="/signup" />
 
       {/* Hero Section */}
       <Hero
-        title="Collab Cloud"
+        title="Harmonize"
         subtitle="CREATE • CONNECT • COLLABORATE"
         description="The only platform built specifically for music collaboration. Find your perfect creative partner, build tracks together, and join a Community that gets it."
         primaryCTA={{ href: "/signup", label: "Start Collaborating" }}
         secondaryCTA={{ href: "#features", label: "See How It Works" }}
       />
 
-      {/* What is Collab Cloud */}
+      {/* What is Harmonize */}
       <motion.section
         id="what-is-loop-labs"
         className="relative z-10 py-20 px-6"
@@ -136,10 +136,10 @@ const Landing = () => {
       >
         <div className="max-w-5xl mx-auto text-center">
           <h2 className="text-white text-4xl md:text-5xl font-bold mb-6">
-            What is Collab Cloud?
+            What is Harmonize?
           </h2>
           <p className="text-gray-300 text-lg leading-relaxed mb-16 max-w-3xl mx-auto">
-            <span className="text-blue-400 font-semibold">Collab Cloud</span> is the collaboration platform music creators have been waiting for.
+            <span className="text-blue-400 font-semibold">Harmonize</span> is the collaboration platform music creators have been waiting for.
             No more scattered DMs, lost files, or dead-end forums. Everything you need to find collaborators,
             manage projects, and create together — all in one place.
           </p>
@@ -171,10 +171,10 @@ const Landing = () => {
             </ul>
           </div>
 
-          {/* Collab Cloud */}
+          {/* Harmonize */}
           <div className="bg-white/5 backdrop-blur-sm border border-green-400/40 rounded-xl p-8 max-w-md w-full transition-all duration-300 hover:-translate-y-2 hover:border-green-400 hover:bg-white/10 hover:shadow-[0_0_25px_rgba(34,197,94,0.3)]">
             <h4 className="text-green-400 font-bold mb-4 text-xl">
-              Collab Cloud
+              Harmonize
             </h4>
             <ul className="text-green-200 text-left text-lg space-y-4">
               <li className="flex items-center">
@@ -210,7 +210,7 @@ const Landing = () => {
         <div className="max-w-7xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-white text-4xl md:text-5xl font-bold mb-4">
-              Core Features Of Collab Cloud
+              Core Features Of Harmonize
             </h2>
             <p className="text-gray-300 text-xl max-w-3xl mx-auto">
               Everything you need to discover, connect, collaborate, and create — no fluff, just what works.
@@ -221,10 +221,6 @@ const Landing = () => {
               <motion.div
                 key={feature.title}
                 className="bg-white/5 backdrop-blur-sm border border-blue-500/20 rounded-xl p-8 hover:bg-white/10 transition-all duration-300 hover:border-blue-400/40 hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] text-center flex flex-col"
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: index * 0.1 }}
-                viewport={{ once: true }}
               >
                 {feature.icon}
                 <h3 className="text-white text-xl font-bold mb-3">
@@ -247,7 +243,7 @@ const Landing = () => {
         </div>
       </motion.section>
 
-      {/* Who Can Use Collab Cloud */}
+      {/* Who Can Use Harmonize */}
       <motion.section
         className="relative z-10 py-20 px-6"
         initial="hidden"
@@ -258,7 +254,7 @@ const Landing = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-white text-4xl md:text-5xl font-bold mb-4">
-              Who Can Use Collab Cloud?
+              Who Can Use Harmonize?
             </h2>
             <p className="text-gray-300 text-xl max-w-3xl mx-auto">
               Whether you're behind the boards, behind the mic, or behind the mix — there's a place for you
@@ -270,10 +266,6 @@ const Landing = () => {
               <motion.div
                 key={index}
                 className={`bg-white/5 backdrop-blur-sm border rounded-xl p-8 transition-all duration-300 hover:-translate-y-2 flex flex-col ${roleStyles[role.color]}`}
-                initial={{ opacity: 0, y: 50 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.7, delay: index * 0.1 }}
-                viewport={{ once: true }}
               >
                 <div className="text-center">
                   <img src={role.image} alt={role.title} className="w-24 h-24 rounded-full mx-auto mb-6 object-cover border-2 border-white/20"/>
@@ -282,7 +274,7 @@ const Landing = () => {
                     {role.description}
                   </p>
                 </div>
-                <blockquote className="text-sm italic text-blue-300/80 mt-8 border-l-2 border-blue-400 pl-4 mt-auto">
+                <blockquote className="text-sm italic text-blue-300/80 mt-10 border-l-2 border-blue-400 pl-4 mt-auto">
                   {role.testimonial}
                 </blockquote>
               </motion.div>
@@ -362,40 +354,6 @@ const Landing = () => {
         </div>
       </motion.section>
 
-      {/* Producer of the Week */}
-      <motion.div
-        className="py-18 px-6"
-        initial="hidden"
-        whileInView="visible"
-        variants={sectionVariants}
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        <ProducerOfTheWeek
-            audioUrl={sample1}
-            genre="Trap"
-            weekNumber={3}
-            uploaderFullName="Siddhant" 
-            uploader="@Prod_siddhant"
-            uploaderImage={sid}
-            trackTitle="Neon Dreams"
-        />
-      </motion.div>
-
-      {/* Explore Button */}
-      <motion.div
-        className="text-center mt-12 mb-16"
-        initial="hidden"
-        whileInView="visible"
-        variants={sectionVariants}
-        viewport={{ once: true, amount: 0.2 }}
-      >
-        <a
-          href="/community"
-          className="inline-block bg-gradient-to-r from-blue-500 to-blue-700 text-white px-10 py-4 rounded-xl font-semibold text-lg hover:scale-105 hover:shadow-[0_0_30px_#2563eb] transition-all duration-300"
-        >
-          Explore The Community
-        </a>
-      </motion.div>
 
       {/* Final CTA */}
       <motion.section
@@ -410,7 +368,7 @@ const Landing = () => {
             Ready to Collab and make your next hit?
           </h2>
           <p className="text-gray-300 text-xl mb-12 max-w-2xl mx-auto">
-            Join thousands of producers, vocalists, and mixers already collaborating on Collab Cloud.
+            Join thousands of producers, vocalists, and mixers already collaborating on Harmonize.
             Your next hit starts with your next connection.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
@@ -431,7 +389,7 @@ const Landing = () => {
       </motion.section>
 
       <Footer
-        tagline="Collab Cloud | Create. Connect. Collaborate."
+        tagline="Harmonize | Create. Connect. Collaborate."
         links={[
           { href: "/privacy", label: "Privacy" },
           { href: "/terms", label: "Terms" },

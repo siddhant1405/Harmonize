@@ -10,7 +10,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaSpotify } from "react-icons/fa";
 
 // Asset Imports
-import authImage from "../assets/images/bg2.png";
+import authImage from "../assets/images/producer.jpg";
 
 const Signup = () => {
   const navigate = useNavigate();
@@ -42,17 +42,12 @@ const Signup = () => {
 
   // --- Component Nav Links ---
   const navLinks = [
-    {href: '/samples', label: "Sample Library" },
+    { href: "/community", label: "Visit the Community" },
     { href: "/about", label: "About Us" },
   ];
 
   return (
     <div className="relative w-full min-h-screen flex flex-col font-sans bg-gradient-to-br from-[#050505] via-[#080808] to-[#0a0f1a]">
-      {/* Background Glows */}
-      <div className="fixed inset-0 z-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,_rgba(37,99,235,0.12)_0%,_transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_75%,_rgba(29,78,216,0.09)_0%,_transparent_50%)]"></div>
-      </div>
 
       <Header navLinks={navLinks} ctaText="Login" ctaHref="/login" />
 
@@ -62,7 +57,6 @@ const Signup = () => {
           className="hidden md:flex md:w-1/2 relative bg-cover bg-center"
           style={{ backgroundImage: `url(${authImage})` }}
         >
-          <div className="absolute inset-0 bg-gradient-to-br from-[#050505]/80 via-[#080808]/80 to-[#0a0f1a]/80"></div>
         </div>
 
         {/* Right Column: Form */}

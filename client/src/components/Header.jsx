@@ -4,17 +4,17 @@ import logoImg from "../assets/images/logo.png";
 
 const Header = ({ navLinks, ctaText, ctaHref }) => {
   return (
-    <header className="top-0 left-0 w-full z-20 bg-black/20 backdrop-blur-md border-b border-gray-400/15">
+    <header className="top-0 left-0 w-full z-20 backdrop-blur-md border-b border-blue-500/15 bg-black/30">
       <div className="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         
         {/* Logo + Title linked to Home */}
         <Link to="/" className="flex items-center">
           <img
             src={logoImg}
-            alt="Collab Cloud Logo"
+            alt="Harmonize Logo"
             className="h-10 w-auto mr-2"
           />
-          <span className="text-white font-bold text-2xl tracking-wide">Collab Cloud</span>
+          <span className="text-white font-bold text-2xl tracking-wide">Harmonize</span>
         </Link>
 
         {/* Navigation + CTA */}

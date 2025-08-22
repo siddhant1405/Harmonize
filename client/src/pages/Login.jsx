@@ -10,7 +10,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaSpotify } from "react-icons/fa";
 
 // Asset Imports
-import authImage from "../assets/images/bg2.png";
+import authImage from "../assets/images/producer.jpg";
 
 const Login = () => {
   const navigate = useNavigate();
@@ -18,12 +18,6 @@ const Login = () => {
   // --- Login Logic ---
   const handleLogin = (e) => {
     e.preventDefault();
-    // **
-    // ** 1. ADD YOUR BACKEND API CALL HERE **
-    // ** e.g., api.login(email, password);
-    // **
-
-    // 2. On success, redirect to the sample library
     console.log("Login successful, redirecting...");
     navigate("/community");
   };
@@ -44,29 +38,22 @@ const Login = () => {
 
   // --- Component Nav Links ---
   const navLinks = [
-    { href: "/samples", label: "Sample Library" },
+    { href: "/community", label: "Visit the Community" },
     { href: "/about", label: "About Us" },
     { href: "/profile", label: "Profile" },
   ];
 
   return (
     <div className="relative w-full min-h-screen flex flex-col font-sans bg-gradient-to-br from-[#050505] via-[#080808] to-[#0a0f1a]">
-      {/* Background Glows */}
-      <div className="fixed inset-0 z-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,_rgba(37,99,235,0.12)_0%,_transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_75%,_rgba(29,78,216,0.09)_0%,_transparent_50%)]"></div>
-      </div>
 
       <Header navLinks={navLinks} ctaText="Sign Up" ctaHref="/signup" />
 
       <main className="flex-grow flex flex-col md:flex-row relative z-10">
-        {/* Left Column */}
+        {/* Left Column: Changed bg-center to bg-right-center */}
         <div
-          className="hidden md:flex md:w-1/2 relative bg-cover bg-center"
+          className="hidden md:flex md:w-1/2 relative bg-cover bg-right-center"
           style={{ backgroundImage: `url(${authImage})` }}
-        >
-          <div className="absolute inset-0 bg-gradient-to-br from-[#050505]/80 via-[#080808]/80 to-[#0a0f1a]/80"></div>
-        </div>
+        ></div>
 
         {/* Right Column: Form */}
         <div className="w-full md:w-1/2 flex flex-col items-center justify-center p-4 sm:p-6 md:p-8">
@@ -99,7 +86,9 @@ const Login = () => {
             {/* Divider */}
             <div className="flex items-center my-4">
               <div className="flex-grow border-t border-gray-700"></div>
-              <span className="flex-shrink mx-4 text-gray-500 text-sm">OR</span>
+              <span className="flex-shrink mx-4 text-gray-500 text-sm">
+                OR
+              </span>
               <div className="flex-grow border-t border-gray-700"></div>
             </div>
 
@@ -127,7 +116,7 @@ const Login = () => {
 
             <div className="text-center mt-4">
               <p className="text-gray-400">
-                New to Loop Labs?{" "}
+                New to Harmonize?{" "}
                 <Link to="/signup" className="text-blue-400 hover:underline">
                   Create an account
                 </Link>
