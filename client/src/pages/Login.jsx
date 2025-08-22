@@ -10,7 +10,7 @@ import { FcGoogle } from "react-icons/fc";
 import { FaSpotify } from "react-icons/fa";
 
 // Asset Imports
-import authImage from "../assets/images/producer.jpg";
+import authImage from "../assets/images/hero4.jpg";
 
 const Login = () => {
   const navigate = useNavigate();
