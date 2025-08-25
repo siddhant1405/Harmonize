@@ -274,7 +274,7 @@ const Landing = () => {
                     {role.description}
                   </p>
                 </div>
-                <blockquote className="text-sm italic text-blue-300/80 mt-10 border-l-2 border-blue-400 pl-4 mt-auto">
+                <blockquote className="text-sm italic text-blue-300/80 mt-12 border-l-2 border-blue-400 pl-4 mt-auto">
                   {role.testimonial}
                 </blockquote>
               </motion.div>
@@ -368,7 +368,7 @@ const Landing = () => {
             Ready to Collab and make your next hit?
           </h2>
           <p className="text-gray-300 text-xl mb-12 max-w-2xl mx-auto">
-            Join thousands of producers, vocalists, and mixers already collaborating on Harmonize.
+            Join thousands of producers, vocalists, and sound engineers already collaborating on Harmonize.
             Your next hit starts with your next connection.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
