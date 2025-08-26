@@ -4,7 +4,7 @@ import heroVideo from "../assets/images/ad.mp4";
 
 const Hero = ({ title, subtitle, description, primaryCTA, secondaryCTA }) => {
   return (
-    <section className="relative h-screen flex items-start justify-center text-center pt-32 md:pt-42">
+    <section className="relative h-screen flex items-start justify-center text-center pt-32 md:pt-52">
       {/* Background Video */}
       <video
         src={heroVideo}

@@ -202,7 +202,7 @@ const CommunityPage = () => {
 
       <main className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-12">
         <div className="text-center mb-16">
-          <h1 className="text-5xl md:text-6xl font-black mb-6 text-white tracking-tight bg-clip-text text-transparent bg-gradient-to-r from-blue-400 to-purple-400">
+          <h1 className="text-5xl md:text-6xl font-black mb-6 text-white tracking-tight bg-clip-text text-transparent drop-shadow-[0_0_20px_rgba(59,130,246,0.3)]">
             The Harmonize Community
           </h1>
           <p className="text-xl text-gray-300 max-w-3xl mx-auto leading-relaxed">

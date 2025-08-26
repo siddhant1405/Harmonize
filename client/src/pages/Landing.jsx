@@ -5,6 +5,7 @@ import { motion } from "framer-motion";
 import Header from "../components/Header";
 import Hero from "../components/HeroSection";
 import Footer from "../components/Footer";
+import GradientButton from "../components/GradientButton";
 
 
 // Assets
@@ -28,7 +29,7 @@ import {
 
 const Landing = () => {
   const navLinks = [
-    { href: "#what-is-loop-labs", label: "What is Harmonize" },
+    { href: "#what-is-harmonize", label: "What is Harmonize" },
     { href: "#features", label: "Features" },
     { href: "/about", label: "About Us" },
     { href: "/community", label: "Visit the Community" },
@@ -51,7 +52,7 @@ const Landing = () => {
       highlights: ["Role-Based Matching", "Demo Attachments", "Instant Accept/Decline"]
     },
       {
-      title: "Smart DMs",
+      title: "Collab Chat",
       description:
         "Artist-focused chat with inline audio sharing, pinned project notes (BPM, key, deadlines), collab status tracking, and file version control. Everything organized.",
       icon: <FaComments size={36} className="text-purple-400 mb-4" />,
@@ -79,21 +80,18 @@ const Landing = () => {
       description: "Share your productions, find vocalists for your tracks, collaborate on instrumentals, and get your music heard by the right artists. Connect with other producers to exchange ideas and elevate your craft.",
       image: prodImage,
       color: "blue",
-      testimonial: "“I found a vocalist for my track in just two days on Harmonize.”"
     },
     {
       title: "Vocalists & Songwriters",
       description: "Find the perfect productions for your vocals, collaborate with producers worldwide, share your melodies, and transform your ideas into complete songs. Build lasting creative partnerships.",
       image: writerImage,
       color: "blue",
-      testimonial: "“The smart DMs made finishing a song with a producer overseas seamless.”"
     },
     {
       title: "Musicians & Engineers",
       description: "Add live instrumentation to digital productions, mix and master collaborative projects, and connect with artists who need your technical expertise. Bring professional polish to every collaboration.",
       image: engineerImage,
       color: "blue",
-      testimonial: "“A great place to find new artists and lend my mixing skills.”"
     }
   ];
 
@@ -108,14 +106,9 @@ const Landing = () => {
 
   return (
     <div className="relative w-full overflow-hidden font-sans bg-gradient-to-br from-[#050505] via-[#080808] to-[#0a0f1a]">
-      {/* Background Glow */}
-      {/* <div className="fixed inset-0 z-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,_rgba(37,99,235,0.12)_0%,_transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_75%,_rgba(29,78,216,0.09)_0%,_transparent_50%)]"></div>
-      </div> */}
-
-      <Header navLinks={navLinks} ctaText="Join Now" ctaHref="/signup" />
-
+      <div className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-lg border-b border-white/10">
+       <Header navLinks={navLinks} ctaText="Join Now" ctaHref="/signup" />
+      </div>
       {/* Hero Section */}
       <Hero
         title="Harmonize"
@@ -125,9 +118,8 @@ const Landing = () => {
         secondaryCTA={{ href: "#features", label: "See How It Works" }}
       />
 
-      {/* What is Harmonize */}
-      <motion.section
-        id="what-is-loop-labs"
+     <motion.section
+        id="what-is-harmonize"
         className="relative z-10 py-20 px-6"
         initial="hidden"
         whileInView="visible"
@@ -139,9 +131,12 @@ const Landing = () => {
             What is Harmonize?
           </h2>
           <p className="text-gray-300 text-lg leading-relaxed mb-16 max-w-3xl mx-auto">
-            <span className="text-blue-400 font-semibold">Harmonize</span> is the collaboration platform music creators have been waiting for.
-            No more scattered DMs, lost files, or dead-end forums. Everything you need to find collaborators,
-            manage projects, and create together — all in one place.
+            For most creators today, the <span className="text-blue-400 font-semibold">music-making workflow is fragmented</span>.  
+            You ask for feedback on Reddit, search for collabs on Discord or Instagram, DM across random platforms, 
+            then juggle WhatsApp, email, and third-party apps just to share files. It’s messy, slow, and uninspiring.  
+            <br /><br />
+            <span className="text-blue-400 font-semibold">Harmonize</span> brings it all together — your Community, collabs, 
+            projects, and files — in one platform built for music creators.
           </p>
         </div>
 
@@ -149,7 +144,7 @@ const Landing = () => {
           {/* Other Platforms */}
           <div className="bg-white/5 backdrop-blur-sm border border-red-500/30 rounded-xl p-8 max-w-md w-full transition-all duration-300 hover:-translate-y-2 hover:bg-white/10 hover:shadow-[0_0_25px_rgba(239,68,68,0.3)]">
             <h4 className="text-red-400 font-bold mb-4 text-xl">
-              Other Platforms
+              The Old Way
             </h4>
             <ul className="text-gray-400 text-left text-lg space-y-4">
               <li className="flex items-center">
@@ -158,15 +153,15 @@ const Landing = () => {
               </li>
               <li className="flex items-center">
                 <FaTimesCircle className="mr-3 text-red-500" />
-                No Project Management
+                Feedback Scattered Across Reddit & Forums
               </li>
               <li className="flex items-center">
                 <FaTimesCircle className="mr-3 text-red-500" />
-                Generic Social Features
+                Collabs Lost in Instagram & Discord
               </li>
               <li className="flex items-center">
                 <FaTimesCircle className="mr-3 text-red-500" />
-                File Chaos & Version Hell
+                File Chaos in WhatsApp, Email & Drives
               </li>
             </ul>
           </div>
@@ -174,29 +169,30 @@ const Landing = () => {
           {/* Harmonize */}
           <div className="bg-white/5 backdrop-blur-sm border border-green-400/40 rounded-xl p-8 max-w-md w-full transition-all duration-300 hover:-translate-y-2 hover:border-green-400 hover:bg-white/10 hover:shadow-[0_0_25px_rgba(34,197,94,0.3)]">
             <h4 className="text-green-400 font-bold mb-4 text-xl">
-              Harmonize
+              The Harmonize Way
             </h4>
             <ul className="text-green-200 text-left text-lg space-y-4">
               <li className="flex items-center">
                 <FaCheckCircle className="mr-3 text-green-400" />
-                Smart Collab Matchmaking
+                Collabs Matched by Role & Genre
               </li>
               <li className="flex items-center">
                 <FaCheckCircle className="mr-3 text-green-400" />
-                Built-in Project Tracking
+                Feedback in a Dedicated Music Community
               </li>
               <li className="flex items-center">
                 <FaCheckCircle className="mr-3 text-green-400" />
-                Music-First Design
+                Collab Chat with Notes & Audio Sharing
               </li>
               <li className="flex items-center">
                 <FaCheckCircle className="mr-3 text-green-400" />
-                Organized File Management
+                Organized Projects & File Management
               </li>
             </ul>
           </div>
         </div>
       </motion.section>
+
 
       {/* Features */}
       <motion.section
@@ -254,7 +250,7 @@ const Landing = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-white text-4xl md:text-5xl font-bold mb-4">
-              Who Can Use Harmonize?
+              Built for every music creator!
             </h2>
             <p className="text-gray-300 text-xl max-w-3xl mx-auto">
               Whether you're behind the boards, behind the mic, or behind the mix — there's a place for you
@@ -274,9 +270,6 @@ const Landing = () => {
                     {role.description}
                   </p>
                 </div>
-                <blockquote className="text-sm italic text-blue-300/80 mt-12 border-l-2 border-blue-400 pl-4 mt-auto">
-                  {role.testimonial}
-                </blockquote>
               </motion.div>
             ))}
           </div>
@@ -319,7 +312,7 @@ const Landing = () => {
               {[
                 { step: "1", title: "Browse The Community", desc: "Discover tracks, join challenges, get feedback", icon: <FaUsers className="text-blue-400" /> },
                 { step: "2", title: "Find Collabs", desc: "Get matched with perfect creative partners", icon: <FaSearch className="text-green-400" /> },
-                { step: "3", title: "Connect & Chat", desc: "Organize your project with smart DMs", icon: <FaComments className="text-purple-400" /> },
+                { step: "3", title: "Connect & Chat", desc: "Organize your project with Collab Chat", icon: <FaComments className="text-purple-400" /> },
                 { step: "4", title: "Create Together", desc: "Track progress from idea to finished track", icon: <FaTrophy className="text-yellow-400" /> }
               ].map((item, index) => (
                 <motion.div

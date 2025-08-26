@@ -13,11 +13,6 @@ const AboutUs = () => {
 
   return (
     <div className="relative w-full overflow-hidden font-sans bg-gradient-to-br from-[#050505] via-[#080808] to-[#0a0f1a] min-h-screen text-white">
-      {/* Background Glows */}
-      <div className="fixed inset-0 z-0">
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_25%_25%,_rgba(37,99,235,0.12)_0%,_transparent_50%)]"></div>
-        <div className="absolute inset-0 bg-[radial-gradient(circle_at_75%_75%,_rgba(29,78,216,0.09)_0%,_transparent_50%)]"></div>
-      </div>
 
       <Header navLinks={navLinks} ctaText="Join Now" ctaHref="/signup" />
 
@@ -25,7 +20,7 @@ const AboutUs = () => {
       <main className="relative z-10 max-w-6xl mx-auto px-6 pt-32 pb-20">
         {/* Hero Section */}
         <div className="text-center mb-20">
-          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 text-white drop-shadow-[0_0_25px_rgba(59,130,246,0.4)]">
+          <h1 className="text-5xl md:text-7xl font-extrabold mb-6 text-white drop-shadow-[0_0_20px_rgba(59,130,246,0.3)]">
             CREATE. CONNECT. COLLABORATE.
           </h1>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
