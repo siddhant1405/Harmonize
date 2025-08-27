@@ -4,7 +4,7 @@ import { Link, useNavigate } from "react-router-dom";
 // Component Imports
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-
+import GradientButton from "../components/GradientButton";
 // Icon Imports
 import { FcGoogle } from "react-icons/fc";
 import { FaSpotify } from "react-icons/fa";
@@ -114,12 +114,9 @@ const Signup = () => {
                 required
                 className="px-4 py-2.5 rounded-lg bg-black/30 text-white border border-white/20 focus:outline-none focus:ring-2 focus:ring-blue-500"
               />
-              <button
-                type="submit"
-                className="inline-block bg-gradient-to-r from-blue-500 to-blue-700 text-white px-10 py-3 mt-2 rounded-xl font-semibold text-lg hover:from-blue-600 hover:to-blue-800 transition-all"
-              >
-                Create Account
-              </button>
+              <GradientButton type="submit" size="large" variant="blue" glow={false}>
+                Create Account 
+              </GradientButton>
             </form>
 
             <div className="text-center mt-4">

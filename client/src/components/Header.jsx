@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import logoImg from "../assets/images/logo.png";
+import GradientButton from "./GradientButton";
 
 const Header = ({ navLinks, ctaText, ctaHref }) => {
   return (
@@ -30,12 +31,9 @@ const Header = ({ navLinks, ctaText, ctaHref }) => {
               </a>
             ))}
           </nav>
-          <a
-            href={ctaHref}
-            className="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-6 py-2 rounded-lg font-semibold hover:scale-105 hover:shadow-[0_0_20px_#2563eb] transition"
-          >
-            {ctaText}
-          </a>
+            <GradientButton to={ctaHref} size="small" variant="blue" glow={true}>
+              {ctaText}
+            </GradientButton>
         </div>
       </div>
     </header>

@@ -365,18 +365,12 @@ const Landing = () => {
             Your next hit starts with your next connection.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
-            <a
-              href="/signup"
-              className="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-10 py-4 rounded-xl font-semibold text-lg hover:scale-105 hover:shadow-[0_0_30px_#2563eb] transition-transform duration-300"
-            >
-              Start Collaborating Now
-            </a>
-            <a
-              href="/community"
-              className="border-2 border-white/30 text-white px-10 py-4 rounded-xl font-semibold text-lg hover:bg-white/10 transition-all duration-300"
-            >
-              Browse The Community First
-            </a>
+          <GradientButton to="/signup" size="large" variant="blue" glow={true}>
+            Start Collaborating Now
+          </GradientButton>
+          <GradientButton to="/about" size="large" variant="transparent" glow={false}>
+            Visit the Community first 
+          </GradientButton>
           </div>
         </div>
       </motion.section>

@@ -1,6 +1,6 @@
 import React from "react";
-import { Link } from "react-router-dom";
 import heroVideo from "../assets/images/ad.mp4";
+import Button from "../components/GradientButton";
 
 const Hero = ({ title, subtitle, description, primaryCTA, secondaryCTA }) => {
   return (
@@ -16,13 +16,12 @@ const Hero = ({ title, subtitle, description, primaryCTA, secondaryCTA }) => {
       />
 
       {/* Semi-Transparent Overlay with Blur */}
-      <div className="absolute top-0 left-0 w-full h-full bg-black/40  z-10"></div>
+      <div className="absolute top-0 left-0 w-full h-full bg-black/40 z-10"></div>
 
       {/* Centered Content */}
       <div className="relative z-20 px-6 flex flex-col items-center max-w-4xl">
         {/* Main Title */}
-        <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold font-montserrat text-white mb-4 leading-tight drop-shadow-lg
-        "> 
+        <h1 className="text-5xl md:text-7xl lg:text-8xl font-extrabold font-montserrat text-white mb-4 leading-tight drop-shadow-lg">
           {title}
         </h1>
 
@@ -41,20 +40,14 @@ const Hero = ({ title, subtitle, description, primaryCTA, secondaryCTA }) => {
         {/* CTA Buttons */}
         <div className="flex flex-col sm:flex-row gap-4">
           {primaryCTA && (
-            <Link
-              to={primaryCTA.href}
-              className="bg-gradient-to-r from-blue-500 to-blue-700 text-white px-10 py-4 rounded-xl font-semibold text-lg hover:from-blue-600 hover:to-blue-800 hover:shadow-[0_0_30px_#2563eb] transition-all duration-300"
-            >
+            <Button to={primaryCTA.href} size="large" variant="blue" glow={true}>
               {primaryCTA.label}
-            </Link>
+            </Button>
           )}
           {secondaryCTA && (
-            <a
-              href={secondaryCTA.href}
-              className="bg-white/10 backdrop-blur-md border border-white/20 text-white px-10 py-4 rounded-xl font-semibold text-lg hover:bg-white/20 transition-all duration-300"
-            >
+            <Button to={secondaryCTA.href} size="large" variant="transparent" glow={false}>
               {secondaryCTA.label}
-            </a>
+            </Button>
           )}
         </div>
       </div>

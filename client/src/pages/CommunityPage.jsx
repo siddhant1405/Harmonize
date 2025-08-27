@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
+import GradientButton from "../components/GradientButton";
 
 import { 
   Search, 
@@ -224,9 +225,9 @@ const CommunityPage = () => {
               />
             </div>
             <div className="flex items-center gap-4 w-full md:w-auto">
-                <button className="flex-grow md:flex-grow-0 bg-gradient-to-r from-blue-500 to-blue-700 hover:scale-105 px-6 py-3 rounded-lg font-semibold flex items-center justify-center gap-2 whitespace-nowrap transition-transform duration-300 shadow-lg shadow-blue-600/30">
-                  <Plus size={20} /> Create Post
-                </button>
+              <GradientButton to="/create-post" size="medium" variant="blue" glow={false} icon={<Plus size={16} />}>
+                Create Post
+              </GradientButton>
             </div>
           </div>
 
