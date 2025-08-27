@@ -5,20 +5,20 @@ import { Heart, Users, Edit, Settings } from "lucide-react";
 // Component Imports
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import SocialIcon from "../components/SocialIcon"; // Using the reusable icon component
-import GradientButton from "../components/GradientButton"; // Importing your custom button
+import SocialIcon from "../components/SocialIcon";
+import GradientButton from "../components/GradientButton";
 
-// Asset Imports (using placeholders, replace with actual imports)
+// Asset Imports
 import profileImg from "../assets/images/producer.jpg";
 import bannerImg from "../assets/images/bg.jpg";
 
-// --- Enhanced Placeholder Data ---
+// --- Enhanced Placeholder Data with "Skills" ---
 const userProfile = {
   name: "Siddhant Gupta",
   username: "Prod_siddhant",
   title: "Producer & Developer",
   bio: "Creating the tools for the next generation of music. Founder of Harmonize. Passionate about blending technology with art. Currently exploring ambient and lo-fi soundscapes.",
-  roles: ["Music Producer", "Writer",], // <-- New roles data
+  skills: ["Music Producer", "Writer", "Mixing Engineer", "Sound Designer"], // <-- Renamed from "roles"
   genres: ["Trap", "Lo-fi", "Future Bass", "Ambient", "R&B"],
   socials: {
     twitter: "https://twitter.com/yourprofile",
@@ -36,7 +36,7 @@ const uploadedSamples = [
 
 const highlightedSamples = uploadedSamples.slice(0, 5);
 
-// Reusable Sample Card Component (No changes needed)
+// Reusable Sample Card Component
 const SampleCard = ({ sample, isOwnSample }) => (
     <div className="bg-white/5 backdrop-blur-sm border border-blue-500/20 rounded-xl p-4 flex flex-col justify-between hover:bg-white/10 transition-all duration-300 hover:border-blue-400/40 hover:-translate-y-1">
         <div>
@@ -64,8 +64,9 @@ const SampleCard = ({ sample, isOwnSample }) => (
 const ProfilePage = () => {
   const navLinks = [{ href: "/samples", label: "Messages" }, { href: "/community", label: "Community" }];
   
-  // Set to `false` to see the "Send Collab Request" GradientButton in action
-  const isOwnProfile = false; 
+  // --- VARIABLE RENAMED FOR CLARITY ---
+  // This flag controls the button logic. `true` for "Edit", `false` for "Collab".
+  const isViewingOwnProfile = true; 
 
   return (
     <div className="relative w-full overflow-hidden font-sans bg-gradient-to-br from-[#050505] via-[#080808] to-[#0a0f1a] min-h-screen text-white">
@@ -88,18 +89,13 @@ const ProfilePage = () => {
                     <p className="text-blue-400 font-semibold mt-1">{userProfile.title}</p>
                   </div>
                   
-                  {/* --- UPDATED ACTION BUTTONS --- */}
                   <div className="flex items-center gap-3">
-                    {isOwnProfile ? (
+                    {isViewingOwnProfile ? (
                       <button className="bg-white/10 hover:bg-white/20 px-4 py-2 rounded-lg font-semibold flex items-center gap-2 transition-all">
                         <Settings size={16} /> Edit Profile
                       </button>
                     ) : (
-                      // Use GradientButton when it's not the user's own profile
-                      <GradientButton 
-                        type="button" 
-                        icon={<Users size={16} />}
-                      >
+                      <GradientButton type="button" icon={<Users size={16} />}>
                         Send Collab Request
                       </GradientButton>
                     )}
@@ -114,22 +110,20 @@ const ProfilePage = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Left Column (Sidebar) */}
           <div className="md:col-span-1 space-y-8">
-            {/* --- UPDATED ABOUT CARD --- */}
             <div className="bg-white/5 backdrop-blur-sm border border-blue-500/20 p-6 rounded-2xl">
               <h3 className="font-bold text-xl mb-3 text-blue-300">About</h3>
               <p className="text-gray-300 leading-relaxed mb-4">{userProfile.bio}</p>
               
-              {/* New "Roles" Section */}
+              {/* --- "Skills" Section --- */}
               <div className="mb-4">
-                  <h4 className="font-semibold text-gray-300 mb-3">Roles</h4>
+                  <h4 className="font-semibold text-gray-300 mb-3">Skills</h4>
                   <div className="flex flex-wrap gap-2">
-                      {userProfile.roles.map(role => (
-                          <span key={role} className="bg-teal-900/50 text-teal-300 text-sm font-medium px-3 py-1 rounded-full">{role}</span>
+                      {userProfile.skills.map(skill => (
+                          <span key={skill} className="bg-teal-900/50 text-teal-300 text-sm font-medium px-3 py-1 rounded-full">{skill}</span>
                       ))}
                   </div>
               </div>
               
-              {/* Social Links Section */}
               <div className="pt-4 border-t border-blue-500/20">
                 <h4 className="font-semibold text-gray-300 mb-3">Connect</h4>
                 <div className="flex flex-wrap gap-3">
@@ -142,7 +136,6 @@ const ProfilePage = () => {
               </div>
             </div>
             
-            {/* Genres Card (No changes needed) */}
             <div className="bg-white/5 backdrop-blur-sm border border-blue-500/20 p-6 rounded-2xl">
               <h3 className="font-bold text-xl mb-4 text-blue-300">Genres</h3>
               <div className="flex flex-wrap gap-2">
@@ -153,12 +146,12 @@ const ProfilePage = () => {
             </div>
           </div>
 
-          {/* Right Column (Creations Feed) - No changes needed */}
+          {/* Right Column (Creations Feed) */}
           <div className="md:col-span-2">
             <div className="bg-white/5 backdrop-blur-sm border border-blue-500/20 p-6 rounded-2xl">
               <h3 className="font-bold text-2xl mb-6 text-blue-300 border-b border-blue-500/20 pb-4">Spotlight</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4">
-                {highlightedSamples.map(sample => <SampleCard key={sample.id} sample={sample} isOwnSample={isOwnProfile} />)}
+                {highlightedSamples.map(sample => <SampleCard key={sample.id} sample={sample} isOwnSample={isViewingOwnProfile} />)}
               </div>
               {highlightedSamples.length === 0 && (
                 <div className="text-center py-12">
