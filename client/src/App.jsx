@@ -5,7 +5,7 @@ import SignUp from "./pages/SignUp";
 import Collab from "./pages/FindCollabs";
 import Community from "./pages/CommunityPage";
 import About from "./pages/AboutUs";
-import message from "./pages/Messages";
+import Message from "./pages/Messages";
 import Profile from "./pages/Profile";
 
 
@@ -19,7 +19,7 @@ function App() {
       <Route path="/community" element={<Community />} />
       <Route path="/about" element={<About />} />
       <Route path="/profile" element={<Profile />} />
-      <Route path="/messages" element={<message />} />
+      <Route path="/messages" element={<Message />} />
     </Routes>
   );
 }
