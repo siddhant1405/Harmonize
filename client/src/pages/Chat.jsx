@@ -3,7 +3,7 @@ import Header from "../components/Header";
 import Footer from "../components/Footer";
 import profileImg from "../assets/images/producer.jpg"; // Artist image
 
-// Message component (uppercase!)
+
 const Message = ({ text, sender }) => (
   <div
     className={`max-w-xs md:max-w-md px-4 py-2 rounded-lg ${

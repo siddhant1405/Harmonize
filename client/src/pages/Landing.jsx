@@ -17,7 +17,6 @@ import sid from "../assets/images/dev.jpg";
 
 // Icons
 import {
-  FaUsers,
   FaSearch,
   FaUserCircle,
   FaComments,
@@ -25,6 +24,9 @@ import {
   FaCheckCircle,
   FaTrophy,
   FaCircle,
+  FaMapMarkerAlt,
+  FaRobot,
+  FaWaveSquare,
 } from "react-icons/fa";
 
 const Landing = () => {
@@ -32,40 +34,40 @@ const Landing = () => {
     { href: "#what-is-harmonize", label: "What is Harmonize" },
     { href: "#features", label: "Features" },
     { href: "/about", label: "About Us" },
-    { href: "/community", label: "Visit the Community" },
     { href: "/login", label: "Login" },
   ];
 
-  const features = [
-    {
-      title: "The Community",
-      description:
-        "Reddit-style Community feed with built-in audio players, genre filters, and weekly challenges. Get feedback, share WIPs, and connect with creators who speak your language.",
-      icon: <FaUsers size={36} className="text-blue-400 mb-4" />,
-      highlights: ["Built-in Audio Player", "Weekly Genre Challenges", "Producer of the Week Badge"]
-    },
-    {
-      title: "Find a Collab",
-      description:
-        "Smart matchmaking that connects producers, vocalists, and mixers based on genres and roles. Send requests with demos, get matched with your perfect creative partner.",
-      icon: <FaSearch size={36} className="text-green-400 mb-4" />,
-      highlights: ["Role-Based Matching", "Demo Attachments", "Instant Accept/Decline"]
-    },
+    const features = [
       {
-      title: "Collab Chat",
-      description:
-        "Artist-focused chat with inline audio sharing, pinned project notes (BPM, key, deadlines), collab status tracking, and file version control. Everything organized.",
-      icon: <FaComments size={36} className="text-purple-400 mb-4" />,
-      highlights: ["Inline Audio Sharing", "Project Status Tracking", "File Version Control"]
-    },
-    {
-      title: "Artist Profiles",
-      description:
-        "Showcase your top 5 tracks, display your skills and what you're looking for. Build trust with badges and achievements. One-click collab requests from any profile.",
-      icon: <FaUserCircle size={36} className="text-yellow-400 mb-4" />,
-      highlights: ["Portfolio Showcase", "Achievement Badges", "Direct Collab Requests"]
-    },
-  ];
+        title: "Smart Collab Matching",
+        description:
+          "AI-powered matchmaking connects producers, vocalists, and mixers based on your musical style, role, and collaboration goals. Find your perfect creative partner in minutes, not months.",
+        icon: <FaRobot size={36} className="text-blue-400 mb-4" />,
+        highlights: ["AI Music Style Analysis", "Role-Based Matching", "Instant Accept/Decline"]
+      },
+      {
+        title: "Collab Requests with Audio",
+        description:
+          "Send collaboration requests with context-rich audio snippets, demo tracks, or reference files directly. Artists can instantly listen, comment, and approve without leaving the platform.",
+        icon: <FaWaveSquare size={36} className="text-purple-400 mb-4" />,
+        highlights: ["Inline Audio Previews", "Context-Rich Requests", "Quick Approve/Decline"]
+      },
+      {
+        title: "Project-Focused Chat",
+        description:
+          "Collab chat built for music creation. Share audio files inline with waveform previews, pin project details (BPM, key, deadlines), track revisions, and manage tasks seamlessly.",
+        icon: <FaComments size={36} className="text-green-400 mb-4" />,
+        highlights: ["Inline Audio Waveforms", "Pinned Notes & Deadlines", "File Version Control"]
+      },
+      {
+        title: "Creative Profiles",
+        description:
+          "Showcase your top tracks, highlight your skills and what you're seeking in collaborators. Build credibility with portfolio samples and send one-click collab requests.",
+        icon: <FaUserCircle size={36} className="text-yellow-400 mb-4" />,
+        highlights: ["Music Portfolio Showcase", "Skills & Seeking Tags", "One-Click Requests"]
+      },
+    ];
+
 
   // Using a map for dynamic Tailwind classes to avoid purging issues
   const roleStyles = {
@@ -77,19 +79,19 @@ const Landing = () => {
   const whoCanUseRoles = [
     {
       title: "Producers & Beatmakers",
-      description: "Share your productions, find vocalists for your tracks, collaborate on instrumentals, and get your music heard by the right artists. Connect with other producers to exchange ideas and elevate your craft.",
+      description: "Upload your beats, get matched with vocalists who fit your style, collaborate on arrangements, and turn your productions into complete songs. Connect with other producers for remix opportunities.",
       image: prodImage,
       color: "blue",
     },
     {
       title: "Vocalists & Songwriters",
-      description: "Find the perfect productions for your vocals, collaborate with producers worldwide, share your melodies, and transform your ideas into complete songs. Build lasting creative partnerships.",
+      description: "Discover productions that match your vocal style, collaborate with producers worldwide, contribute melodies and lyrics, and build your catalog with quality instrumentals.",
       image: writerImage,
       color: "blue",
     },
     {
       title: "Musicians & Engineers",
-      description: "Add live instrumentation to digital productions, mix and master collaborative projects, and connect with artists who need your technical expertise. Bring professional polish to every collaboration.",
+      description: "Add live instrumentation to digital productions, provide mixing and mastering services, and connect with artists who need your technical skills to bring their vision to life.",
       image: engineerImage,
       color: "blue",
     }
@@ -112,9 +114,9 @@ const Landing = () => {
       {/* Hero Section */}
       <Hero
         title="Harmonize"
-        subtitle="CREATE • CONNECT • COLLABORATE"
-        description="The only platform built specifically for music collaboration. Find your perfect creative partner, build tracks together, and join a Community that gets it."
-        primaryCTA={{ href: "/signup", label: "Start Collaborating" }}
+        subtitle="Create. Connect. Collaborate."
+        description="AI-powered music collaboration platform. Get matched with the perfect creative partners, collaborate seamlessly, and turn ideas into finished tracks."
+        primaryCTA={{ href: "/signup", label: "Find Collaborators" }}
         secondaryCTA={{ href: "#features", label: "See How It Works" }}
       />
 
@@ -131,12 +133,12 @@ const Landing = () => {
             What is Harmonize?
           </h2>
           <p className="text-gray-300 text-lg leading-relaxed mb-16 max-w-3xl mx-auto">
-            For most creators today, the <span className="text-blue-400 font-semibold">music-making workflow is fragmented</span>.  
-            You ask for feedback on Reddit, search for collabs on Discord or Instagram, DM across random platforms, 
-            then juggle WhatsApp, email, and third-party apps just to share files. It’s messy, slow, and uninspiring.  
+            Today's music collaboration is <span className="text-blue-400 font-semibold">broken and fragmented</span>.  
+            You scroll through endless social feeds hoping to find the right collaborator, send cold DMs with no context, 
+            then struggle with file sharing across WhatsApp, email, and random cloud drives. Projects get lost, communication breaks down, and great ideas never become songs.
             <br /><br />
-            <span className="text-blue-400 font-semibold">Harmonize</span> brings it all together — your Community, collabs, 
-            projects, and files — in one platform built for music creators.
+            <span className="text-blue-400 font-semibold">Harmonize</span> fixes this. Get intelligently matched with collaborators who complement your style, 
+            manage projects with tools built for music creation, and focus on what matters — making great music together.
           </p>
         </div>
 
@@ -149,19 +151,19 @@ const Landing = () => {
             <ul className="text-gray-400 text-left text-lg space-y-4">
               <li className="flex items-center">
                 <FaTimesCircle className="mr-3 text-red-500" />
-                Random DMs with No Context
+                Endless Scrolling for Collaborators
               </li>
               <li className="flex items-center">
                 <FaTimesCircle className="mr-3 text-red-500" />
-                Feedback Scattered Across Reddit & Forums
+                Cold DMs with No Context
               </li>
               <li className="flex items-center">
                 <FaTimesCircle className="mr-3 text-red-500" />
-                Collabs Lost in Instagram & Discord
+                File Chaos Across Multiple Apps
               </li>
               <li className="flex items-center">
                 <FaTimesCircle className="mr-3 text-red-500" />
-                File Chaos in WhatsApp, Email & Drives
+                Lost Projects & Broken Communication
               </li>
             </ul>
           </div>
@@ -174,19 +176,19 @@ const Landing = () => {
             <ul className="text-green-200 text-left text-lg space-y-4">
               <li className="flex items-center">
                 <FaCheckCircle className="mr-3 text-green-400" />
-                Collabs Matched by Role & Genre
+                AI Matches Your Perfect Partners
               </li>
               <li className="flex items-center">
                 <FaCheckCircle className="mr-3 text-green-400" />
-                Feedback in a Dedicated Music Community
+                Context-Rich Collaboration Requests
               </li>
               <li className="flex items-center">
                 <FaCheckCircle className="mr-3 text-green-400" />
-                Collab Chat with Notes & Audio Sharing
+                Project Chat with Audio Integration
               </li>
               <li className="flex items-center">
                 <FaCheckCircle className="mr-3 text-green-400" />
-                Organized Projects & File Management
+                Organized Workflow & File Management
               </li>
             </ul>
           </div>
@@ -209,7 +211,7 @@ const Landing = () => {
               Core Features Of Harmonize
             </h2>
             <p className="text-gray-300 text-xl max-w-3xl mx-auto">
-              Everything you need to discover, connect, collaborate, and create — no fluff, just what works.
+              Everything you need to find collaborators, connect meaningfully, and create together — built specifically for music.
             </p>
           </div>
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
@@ -250,10 +252,10 @@ const Landing = () => {
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-16">
             <h2 className="text-white text-4xl md:text-5xl font-bold mb-4">
-              Built for every music creator!
+              Built for every music creator
             </h2>
             <p className="text-gray-300 text-xl max-w-3xl mx-auto">
-              Whether you're behind the boards, behind the mic, or behind the mix — there's a place for you
+              Whether you create beats, write songs, or engineer tracks — find your perfect creative match
             </p>
           </div>
 
@@ -290,7 +292,7 @@ const Landing = () => {
               How It Works
             </h2>
             <p className="text-gray-300 text-xl max-w-3xl mx-auto">
-              From idea to finished track in 4 simple steps
+              From finding your perfect match to finishing your track — streamlined collaboration in 4 steps
             </p>
           </div>
 
@@ -310,10 +312,10 @@ const Landing = () => {
 
             <div className="relative grid md:grid-cols-4 gap-x-8 gap-y-16">
               {[
-                { step: "1", title: "Browse The Community", desc: "Discover tracks, join challenges, get feedback", icon: <FaUsers className="text-blue-400" /> },
-                { step: "2", title: "Find Collabs", desc: "Get matched with perfect creative partners", icon: <FaSearch className="text-green-400" /> },
-                { step: "3", title: "Connect & Chat", desc: "Organize your project with Collab Chat", icon: <FaComments className="text-purple-400" /> },
-                { step: "4", title: "Create Together", desc: "Track progress from idea to finished track", icon: <FaTrophy className="text-yellow-400" /> }
+                { step: "1", title: "Create Your Profile", desc: "Upload your best tracks, set your role and genres", icon: <FaUserCircle className="text-blue-400" /> },
+                { step: "2", title: "Get Smart Matches", desc: "AI finds collaborators who complement your style", icon: <FaRobot className="text-green-400" /> },
+                { step: "3", title: "Connect & Plan", desc: "Send requests, chat with project-focused tools", icon: <FaComments className="text-purple-400" /> },
+                { step: "4", title: "Create Together", desc: "Track progress from idea to finished song", icon: <FaTrophy className="text-yellow-400" /> }
               ].map((item, index) => (
                 <motion.div
                   key={index}
@@ -358,25 +360,25 @@ const Landing = () => {
       >
         <div className="max-w-4xl mx-auto text-center">
           <h2 className="text-white text-4xl md:text-5xl font-bold mb-8">
-            Ready to Collab and make your next hit?
+            Ready to find your perfect collaborator?
           </h2>
           <p className="text-gray-300 text-xl mb-12 max-w-2xl mx-auto">
-            Join thousands of producers, vocalists, and sound engineers already collaborating on Harmonize.
-            Your next hit starts with your next connection.
+            Stop wasting time searching. Let AI connect you with creators who match your style and vision. 
+            Your next breakthrough track is just one collaboration away.
           </p>
           <div className="flex gap-4 justify-center flex-wrap">
           <GradientButton to="/signup" size="large" variant="blue" glow={true}>
             Start Collaborating Now
           </GradientButton>
           <GradientButton to="/about" size="large" variant="transparent" glow={false}>
-            Visit the Community first 
+            Learn More
           </GradientButton>
           </div>
         </div>
       </motion.section>
 
       <Footer
-        tagline="Harmonize | Create. Connect. Collaborate."
+        tagline="Harmonize | Create . Connect . Collaborate"
         links={[
           { href: "/privacy", label: "Privacy" },
           { href: "/terms", label: "Terms" },

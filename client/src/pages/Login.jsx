@@ -20,26 +20,26 @@ const Login = () => {
   const handleLogin = (e) => {
     e.preventDefault();
     console.log("Login successful, redirecting...");
-    navigate("/community");
+    navigate("/collab");
   };
 
   const handleGoogleLogin = () => {
     // 1. Initiate Google OAuth flow
     console.log("Google Login initiated");
     // 2. On successful callback from Google, redirect
-    navigate("/community");
+    navigate("/collab");
   };
 
   const handleSpotifyLogin = () => {
     // 1. Initiate Spotify OAuth flow
     console.log("Spotify Login initiated");
     // 2. On successful callback from Spotify, redirect
-    navigate("/community");
+    navigate("/collab");
   };
 
   // --- Component Nav Links ---
   const navLinks = [
-    { href: "/community", label: "Visit the Community" },
+    { href: "/collab", label: "Visit the Community" },
     { href: "/about", label: "About Us" },
     { href: "/profile", label: "Profile" },
   ];
