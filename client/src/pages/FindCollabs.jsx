@@ -1,49 +1,52 @@
-import React from "react";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
+import { AnimatePresence } from "framer-motion";
+import { findMatchesAPI } from "../utils/mockAPI"; 
+import CollabForm from "../components/CollabForm";
+import LoadingOverlay from "../components/LoadingOverlay";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
-const mockSamples = [
-  {
-    name: "Midnight Groove",
-    artist: "@bassflow",
-    genre: "Lo-fi"
-  },
-  {
-    name: "Starlight Percs",
-    artist: "@melodize",
-    genre: "Trap"
-  },
-  {
-    name: "Uplifted Plucks",
-    artist: "@synthrider",
-    genre: "House"
-  },
+const navLinks = [
+  { label: "Messages", href: "/messages" },
+  { label: "Profile", href: "/profile" },
 ];
 
-const SampleLibrary = () => {
+const FindCollab = () => {
+  const [isLoading, setIsLoading] = useState(false);
+  const navigate = useNavigate();
+
+  const handleSearch = async (formData) => {
+    setIsLoading(true);
+    const results = await findMatchesAPI(formData);
+    navigate("/collabresults", { state: { matches: results } });
+  };
+
   return (
-    <section className="min-h-screen flex items-center justify-center px-6 py-20 bg-gradient-to-br from-[#151515] via-[#0B1020] to-[#08080D]">
-      <div className="max-w-6xl w-full">
-        <h1 className="text-4xl md:text-5xl font-bold text-white mb-10 text-center">Sample Library</h1>
-        <div className="grid grid-cols-1 sm:grid-cols-3 gap-8">
-          {mockSamples.map((sample, idx) => (
-            <div
-              key={idx}
-              className="bg-white/10 backdrop-blur rounded-xl p-6 text-center"
-            >
-              {/* Replace with actual waveform image when available */}
-              <div className="bg-emerald-400/10 text-emerald-300 py-2 rounded mb-4">
-                {sample.genre}
-              </div>
-              <h2 className="text-xl font-semibold text-white mb-1">{sample.name}</h2>
-              <div className="text-gray-400 mb-4">{sample.artist}</div>
-              <button className="bg-gradient-to-r from-amber-400 to-pink-500 text-white px-5 py-2 rounded-lg font-semibold hover:scale-105 transition">
-                ▶ Listen
-              </button>
-            </div>
-          ))}
-        </div>
+    <div className="relative w-full overflow-hidden font-sans bg-gradient-to-br from-[#050505] via-[#080808] to-[#0a0f1a] min-h-screen text-white flex flex-col items-center">
+      
+      {/* HEADER */}
+      <Header navLinks={navLinks} ctaText="Log Out" ctaHref="/" />
+
+      {/* Main content */}
+      <div className="flex-1 flex items-center justify-center w-full mt-12 mb-12">
+        <AnimatePresence>
+          {isLoading && <LoadingOverlay />}
+        </AnimatePresence>
+
+        <div className={isLoading ? "blur-md w-full max-w-4xl" : "w-full max-w-4xl"}>
+          <CollabForm onSearch={handleSearch} />
+        </div>  
       </div>
-    </section>
+      <div className="w-full">
+        <Footer 
+          tagline="Harmonize — Built for creators, by creators."
+          links={[{ href: "/privacy", label: "Privacy" }, { href: "/terms", label: "Terms" }]}
+        />
+      </div>
+    </div>
+    
   );
 };
 
-export default SampleLibrary;
+export default FindCollab;

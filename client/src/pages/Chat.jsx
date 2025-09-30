@@ -18,7 +18,7 @@ const Message = ({ text, sender }) => (
 
 const MyChat = () => {
   const navLinks = [
-    { href: "/collab", label: "Find Collab" },
+    { href: "/findcollab", label: "Find Collab" },
     { href: "/profile", label: "Profile" },
   ];
 
