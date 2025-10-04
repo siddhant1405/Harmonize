@@ -2,7 +2,7 @@
 
 import React, { useEffect } from "react";
 import { useLocation, useNavigate } from "react-router-dom";
-import CollabResults from "../components/Results"; // Ensure this path is correct
+import CollabResults from "../components/Results"; 
 import Header from "../components/Header";
 import Footer from "../components/Footer";
 
