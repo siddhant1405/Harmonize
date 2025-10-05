@@ -39,9 +39,8 @@ const Login = () => {
 
   // --- Component Nav Links ---
   const navLinks = [
-    { href: "/findcollab", label: "Visit the Community" },
+    { href: "/", label: "Home" },
     { href: "/about", label: "About Us" },
-    { href: "/profile", label: "Profile" },
   ];
 
   return (
@@ -124,10 +123,7 @@ const Login = () => {
         </div>
       </main>
 
-      <Footer
-        tagline="A global community, built by and for creators."
-        links={[{ href: "#", label: "Privacy" }, { href: "#", label: "Terms" }]}
-      />
+      <Footer />
     </div>
   );
 };

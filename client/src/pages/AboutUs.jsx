@@ -154,15 +154,7 @@ const AboutUs = () => {
         </div>
       </main>
 
-      <Footer
-        tagline="Harmonize | Where creators meet and build."
-        links={[
-          { href: "/privacy", label: "Privacy" },
-          { href: "/terms", label: "Terms" },
-          { href: "/support", label: "Support" },
-          { href: "/contact", label: "Contact" },
-        ]}
-      />
+      <Footer/>
     </div>
   );
 };

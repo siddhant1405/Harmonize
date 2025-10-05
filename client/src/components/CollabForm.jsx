@@ -4,6 +4,7 @@ import React, { useState } from "react";
 import { FaUser, FaUsers, FaMusic, FaMapMarkerAlt, FaArrowRight, FaChevronDown } from "react-icons/fa";
 import { roles, genres } from "../utils/musicData"; 
 import { motion } from "framer-motion";
+import GradientButton from "../components/GradientButton";
 
 // --- INLINE FormSelect ---
 const FormSelect = ({ icon, name, options, placeholder, value, onChange, disabled, required }) => (
@@ -152,7 +153,7 @@ const CollabForm = ({ onSearch }) => {
           
           <button 
             type="submit" 
-            className="bg-blue-600 font-bold py-3.5 px-8 rounded-lg hover:bg-blue-500 transition-all duration-300 flex items-center gap-2 w-full sm:w-auto justify-center group"
+            className="bg-blue-600 text-white font-bold py-3.5 px-8 rounded-lg hover:shadow-[0_0_20px_#2563eb] transition-all duration-300 flex items-center gap-2 w-full sm:w-auto justify-center group"
           >
             Find My Match 
             <FaArrowRight />

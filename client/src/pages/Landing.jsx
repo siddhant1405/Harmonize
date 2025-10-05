@@ -107,10 +107,10 @@ const Landing = () => {
   };
 
   return (
-    <div className="relative w-full overflow-hidden font-sans bg-gradient-to-br from-[#050505] via-[#080808] to-[#0a0f1a]">
-      <div className="fixed top-0 left-0 right-0 z-50 bg-black/80 backdrop-blur-lg border-b border-white/10">
+    <div className="relative w-full overflow-hidden font-sans bg-black min-h-screen text-white">
+      
        <Header navLinks={navLinks} ctaText="Join Now" ctaHref="/signup" />
-      </div>
+      
       {/* Hero Section */}
       <Hero
         title="Harmonize"
@@ -377,15 +377,7 @@ const Landing = () => {
         </div>
       </motion.section>
 
-      <Footer
-        tagline="Harmonize | Create . Connect . Collaborate"
-        links={[
-          { href: "/privacy", label: "Privacy" },
-          { href: "/terms", label: "Terms" },
-          { href: "/support", label: "Support" },
-          { href: "/contact", label: "Contact" },
-        ]}
-      />
+      <Footer />
     </div>
   );
 };

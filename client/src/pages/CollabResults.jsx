@@ -8,9 +8,9 @@ import Footer from "../components/Footer";
 
 // Navigation links for the header on this page
 const navLinks = [
-  { label: "Home", href: "/" },
-  { label: "Explore", href: "/explore" },
-  { label: "Find Collab", href: "/find-collabs" },
+  { label: "Find Collabs", href: "/findcollab" },
+  { label: "Messages", href: "/messages" },
+  { label: "Profile", href: "/profile" },
 ];
 
 const CollabResultsPage = () => {
@@ -24,7 +24,7 @@ const CollabResultsPage = () => {
   // without any match data, they are redirected back to the form.
   useEffect(() => {
     if (!matches) {
-      navigate("/find-collabs");
+      navigate("/findcollab");
     }
   }, [matches, navigate]);
 
@@ -48,10 +48,7 @@ const CollabResultsPage = () => {
       </main>
 
       {/* FOOTER */}
-      <Footer 
-        tagline="Harmonize — Built for creators, by creators."
-        links={[{ href: "/privacy", label: "Privacy" }, { href: "/terms", label: "Terms" }]}
-      />
+      <Footer />
     </div>
   );
 };

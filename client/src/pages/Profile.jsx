@@ -69,7 +69,7 @@ const ProfilePage = () => {
   const isViewingOwnProfile = true; 
 
   return (
-    <div className="relative w-full overflow-hidden font-sans bg-gradient-to-br from-[#050505] via-[#080808] to-[#0a0f1a] min-h-screen text-white">
+ <div className="relative w-full overflow-hidden font-sans bg-black min-h-screen text-white">
       <Header navLinks={navLinks} ctaText="Log Out" ctaHref="/" />
 
       <main className="relative z-10 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
@@ -163,10 +163,7 @@ const ProfilePage = () => {
         </div>
       </main>
 
-      <Footer
-        tagline="Harmonize — Built for creators, by creators."
-        links={[{ href: "/privacy", label: "Privacy" }, { href: "/terms", label: "Terms" }]}
-      />
+      <Footer />
     </div>
   );
 };

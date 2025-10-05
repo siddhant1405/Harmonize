@@ -21,6 +21,7 @@ const glowClasses = {
 
 const Button = ({
   to,
+  href,
   children,
   size = "medium",
   variant = "blue",
@@ -29,32 +30,47 @@ const Button = ({
   glow = true,
   ...props
 }) => {
-  const baseClasses = `${sizeClasses[size]} flex items-center justify-center gap-2`;
+  const baseClasses = `${sizeClasses[size]} flex items-center justify-center gap-2 font-montserrat font-semibold`;
+  const classes = glow
+    ? `${variantClasses[variant]} ${baseClasses} ${glowClasses[size]}`
+    : variant === "blue"
+    ? `${baseClasses} bg-blue-600 text-white hover:bg-blue-800 active:bg-blue-800 transition-colors duration-300`
+    : `${variantClasses[variant]} ${baseClasses}`;
 
-  // Determine final classes
-  let classes = "";
-  if (glow) {
-    // Glow enabled → original gradient + glow
-    classes = `${variantClasses[variant]} ${baseClasses} ${glowClasses[size]}`;
-  } else if (variant === "blue") {
-    // Glow disabled & blue → solid blue that darkens on hover/click
-    classes = `${baseClasses} bg-blue-600 text-white hover:bg-blue-800 active:bg-blue-800 transition-colors duration-300`;
-  } else {
-    // Other variants → fallback
-    classes = `${variantClasses[variant]} ${baseClasses}`;
-  }
-
-  // External link
-  if (to?.startsWith("http")) {
+  // External links (http/https)
+  if (to?.startsWith("http") || href?.startsWith("http")) {
     return (
-      <a href={to} className={classes} {...props}>
+      <a
+        href={to || href}
+        className={classes}
+        target="_blank"
+        rel="noopener noreferrer"
+        {...props}
+      >
         {icon && <span className="flex items-center">{icon}</span>}
         {children}
       </a>
     );
   }
 
-  // Internal link
+  // In-page anchors (e.g., #features)
+  if (to?.startsWith("#") || href?.startsWith("#")) {
+    const anchor = to || href;
+    return (
+      <button
+        className={classes}
+        onClick={() =>
+          document.querySelector(anchor)?.scrollIntoView({ behavior: "smooth" })
+        }
+        {...props}
+      >
+        {icon && <span className="flex items-center">{icon}</span>}
+        {children}
+      </button>
+    );
+  }
+
+  // Internal routes (React Router)
   if (to) {
     return (
       <Link to={to} className={classes} {...props}>
@@ -64,7 +80,7 @@ const Button = ({
     );
   }
 
-  // Normal button
+  // Default button
   return (
     <button type={type} className={classes} {...props}>
       {icon && <span className="flex items-center">{icon}</span>}

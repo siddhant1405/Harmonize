@@ -23,8 +23,8 @@ const FindCollab = () => {
   };
 
   return (
-    <div className="relative w-full overflow-hidden font-sans bg-gradient-to-br from-[#050505] via-[#080808] to-[#0a0f1a] min-h-screen text-white flex flex-col items-center">
-      
+<div className="relative w-full overflow-hidden font-sans bg-black min-h-screen text-white">
+
       {/* HEADER */}
       <Header navLinks={navLinks} ctaText="Log Out" ctaHref="/" />
 
@@ -39,10 +39,7 @@ const FindCollab = () => {
         </div>  
       </div>
       <div className="w-full">
-        <Footer 
-          tagline="Harmonize — Built for creators, by creators."
-          links={[{ href: "/privacy", label: "Privacy" }, { href: "/terms", label: "Terms" }]}
-        />
+        <Footer />
       </div>
     </div>
     
