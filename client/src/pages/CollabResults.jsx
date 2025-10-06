@@ -34,8 +34,7 @@ const CollabResultsPage = () => {
   }
 
   return (
-    <div className="relative w-full overflow-hidden font-sans bg-gradient-to-br from-[#050505] via-[#080808] to-[#0a0f1a] min-h-screen text-white flex flex-col">
-      
+    <div className="relative w-full overflow-hidden font-sans bg-black min-h-screen text-white">
       {/* HEADER */}
       <Header navLinks={navLinks} ctaText="Log Out" ctaHref="/" />
 

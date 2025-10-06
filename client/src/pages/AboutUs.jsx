@@ -1,27 +1,23 @@
 import React from "react";
 import Header from "../components/Header";
 import Footer from "../components/Footer";
-import devImage from "../assets/images/dev.jpg"; // Your developer image
+import devImage from "../assets/images/dev.jpg"; 
 
 const AboutUs = () => {
   const navLinks = [
     { href: "/", label: "Home" },
-    { href: "/community", label: "The Community" },
     { href: "/features", label: "Features" },
-    { href: "/signup", label: "Sign Up" },
   ];
 
   return (
-    <div className="relative w-full overflow-hidden font-sans bg-gradient-to-br from-[#050505] via-[#080808] to-[#0a0f1a] min-h-screen text-white">
-
+    <div className="relative w-full overflow-hidden font-sans bg-black min-h-screen text-white"> 
       <Header navLinks={navLinks} ctaText="Join Now" ctaHref="/signup" />
 
       {/* Main Content */}
       <main className="relative z-10 max-w-6xl mx-auto px-6 pt-32 pb-20">
-        {/* Hero Section */}
         <div className="text-center mb-20">
           <h1 className="text-5xl md:text-7xl font-extrabold mb-6 text-white drop-shadow-[0_0_20px_rgba(59,130,246,0.3)]">
-            CREATE. CONNECT. COLLABORATE.
+            Harmonize
           </h1>
           <p className="text-xl text-gray-300 max-w-4xl mx-auto leading-relaxed">
             Harmonize is not just another platform—it’s where creators connect, share, and build together. 

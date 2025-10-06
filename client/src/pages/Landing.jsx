@@ -1,21 +1,21 @@
 import React from "react";
 import { motion } from "framer-motion";
 
-// Components
+// Components imports 
 import Header from "../components/Header";
 import Hero from "../components/HeroSection";
 import Footer from "../components/Footer";
 import GradientButton from "../components/GradientButton";
 
 
-// Assets
+// Asset imports
 import sample1 from "../assets/sample/sample1.mp3";
 import prodImage from "../assets/images/producer.jpg";
 import writerImage from "../assets/images/artist.jpg";
 import engineerImage from "../assets/images/engineer.jpg";
 import sid from "../assets/images/dev.jpg";
 
-// Icons
+// Icons 
 import {
   FaSearch,
   FaUserCircle,
@@ -28,6 +28,8 @@ import {
   FaRobot,
   FaWaveSquare,
 } from "react-icons/fa";
+
+// content maps
 
 const Landing = () => {
   const navLinks = [
@@ -69,9 +71,8 @@ const Landing = () => {
     ];
 
 
-  // Using a map for dynamic Tailwind classes to avoid purging issues
   const roleStyles = {
-    blue: "border-blue-500/20 hover:border-blue-400/40 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)]",
+    blue: "border-white/10 hover:border-blue-400/40 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)]",
     purple: "border-purple-500/20 hover:border-purple-400/40 hover:shadow-[0_0_25px_rgba(168,85,247,0.3)]",
     green: "border-green-500/20 hover:border-green-400/40 hover:shadow-[0_0_25px_rgba(34,197,94,0.3)]",
   };
@@ -106,11 +107,13 @@ const Landing = () => {
     },
   };
 
+
+//landing page starts
+
   return (
-    <div className="relative w-full overflow-hidden font-sans bg-black min-h-screen text-white">
-      
-       <Header navLinks={navLinks} ctaText="Join Now" ctaHref="/signup" />
-      
+   <div className="relative w-full overflow-hidden font-sans bg-black min-h-screen text-white">     
+     <Header navLinks={navLinks} ctaText="Join Now" ctaHref="/signup" />
+
       {/* Hero Section */}
       <Hero
         title="Harmonize"
@@ -120,6 +123,7 @@ const Landing = () => {
         secondaryCTA={{ href: "#features", label: "See How It Works" }}
       />
 
+     {/* What is Harmonize */}
      <motion.section
         id="what-is-harmonize"
         className="relative z-10 py-20 px-6"
@@ -142,8 +146,8 @@ const Landing = () => {
           </p>
         </div>
 
+      {/* Old Way vs Harmonize Comparison */}
         <div className="flex flex-col md:flex-row gap-8 justify-center items-stretch mt-6">
-          {/* Other Platforms */}
           <div className="bg-white/5 backdrop-blur-sm border border-red-500/30 rounded-xl p-8 max-w-md w-full transition-all duration-300 hover:-translate-y-2 hover:bg-white/10 hover:shadow-[0_0_25px_rgba(239,68,68,0.3)]">
             <h4 className="text-red-400 font-bold mb-4 text-xl">
               The Old Way
@@ -168,7 +172,6 @@ const Landing = () => {
             </ul>
           </div>
 
-          {/* Harmonize */}
           <div className="bg-white/5 backdrop-blur-sm border border-green-400/40 rounded-xl p-8 max-w-md w-full transition-all duration-300 hover:-translate-y-2 hover:border-green-400 hover:bg-white/10 hover:shadow-[0_0_25px_rgba(34,197,94,0.3)]">
             <h4 className="text-green-400 font-bold mb-4 text-xl">
               The Harmonize Way
@@ -218,7 +221,7 @@ const Landing = () => {
             {features.map((feature, index) => (
               <motion.div
                 key={feature.title}
-                className="bg-white/5 backdrop-blur-sm border border-blue-500/20 rounded-xl p-8 hover:bg-white/10 transition-all duration-300 hover:border-blue-400/40 hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] text-center flex flex-col"
+                className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-8 hover:bg-white/10 transition-all duration-300 hover:border-blue-400/40 hover:-translate-y-2 hover:shadow-[0_0_25px_rgba(59,130,246,0.3)] text-center flex flex-col"
               >
                 {feature.icon}
                 <h3 className="text-white text-xl font-bold mb-3">
@@ -278,7 +281,7 @@ const Landing = () => {
         </div>
       </motion.section>
 
-      {/* How It Works - Improved UI */}
+      {/* How It Works*/}
       <motion.section
         className="relative z-10 py-20 px-6"
         initial="hidden"
@@ -297,9 +300,7 @@ const Landing = () => {
           </div>
 
           <div className="relative">
-            {/* Desktop Timeline */}
             <div className="hidden md:block absolute top-8 left-0 w-full h-1 bg-white/10 rounded-full" aria-hidden="true">
-                {/* The animated line */}
                 <motion.div 
                     className="h-full bg-blue-500 rounded-full"
                     initial={{ scaleX: 0 }}

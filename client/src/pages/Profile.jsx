@@ -18,7 +18,7 @@ const userProfile = {
   username: "Prod_siddhant",
   title: "Producer & Developer",
   bio: "Creating the tools for the next generation of music. Founder of Harmonize. Passionate about blending technology with art. Currently exploring ambient and lo-fi soundscapes.",
-  skills: ["Music Producer", "Writer", "Mixing Engineer", "Sound Designer"], // <-- Renamed from "roles"
+  skills: ["Music Producer", "Writer", "Mixing Engineer", "Sound Designer"], 
   genres: ["Trap", "Lo-fi", "Future Bass", "Ambient", "R&B"],
   socials: {
     twitter: "https://twitter.com/yourprofile",
@@ -27,18 +27,18 @@ const userProfile = {
 };
 
 const uploadedSamples = [
-  { id: 1, name: "Midnight Vibe", bpm: 90, key: "C#m", likes: 1240, tags: ["chill", "dark", "trap"] },
-  { id: 2, name: "808 Knock", bpm: 140, key: "Fm", likes: 890, tags: ["808", "hard", "drill"] },
-  { id: 3, name: "Sunset Rhodes", bpm: 85, key: "Am", likes: 2100, tags: ["lofi", "keys", "warm"] },
-  { id: 4, name: "Drill UK", bpm: 145, key: "Gm", likes: 756, tags: ["drill", "uk", "aggressive"] },
-  { id: 5, name: "Ambient Pad", bpm: 70, key: "Gmaj", likes: 1800, tags: ["pad", "warm", "cinematic"] },
+  { id: 1, name: "Midnight Vibe", bpm: 90, key: "C#m",  tags: ["chill", "dark", "trap"] },
+  { id: 2, name: "808 Knock", bpm: 140, key: "Fm", tags: ["808", "hard", "drill"] },
+  { id: 3, name: "Sunset Rhodes", bpm: 85, key: "Am", tags: ["lofi", "keys", "warm"] },
+  { id: 4, name: "Drill UK", bpm: 145, key: "Gm",  tags: ["drill", "uk", "aggressive"] },
+  { id: 5, name: "Ambient Pad", bpm: 70, key: "Gmaj", tags: ["pad", "warm", "cinematic"] },
 ];
 
 const highlightedSamples = uploadedSamples.slice(0, 5);
 
 // Reusable Sample Card Component
 const SampleCard = ({ sample, isOwnSample }) => (
-    <div className="bg-white/5 backdrop-blur-sm border border-blue-500/20 rounded-xl p-4 flex flex-col justify-between hover:bg-white/10 transition-all duration-300 hover:border-blue-400/40 hover:-translate-y-1">
+    <div className="bg-white/5 backdrop-blur-sm border border-white/10 rounded-xl p-4 flex flex-col justify-between hover:bg-white/10 transition-all duration-300 hover:border-blue-400/40 hover:-translate-y-1">
         <div>
             <h4 className="text-white font-bold text-lg truncate">{sample.name}</h4>
             <div className="w-full h-16 bg-black/20 my-3 rounded-md flex items-center justify-center">
@@ -50,11 +50,10 @@ const SampleCard = ({ sample, isOwnSample }) => (
                 ))}
             </div>
         </div>
-        <div className="flex justify-between items-center text-xs text-gray-300 pt-2 border-t border-blue-500/20">
+        <div className="flex justify-between items-center text-xs text-gray-300 pt-2 border-t border-white/10">
             <span>{sample.bpm} BPM</span>
             <span>{sample.key}</span>
             <div className="flex items-center gap-3">
-                <button className="text-pink-400 hover:text-pink-300 flex items-center gap-1"><Heart size={12}/> {sample.likes}</button>
                 {isOwnSample && <button className="text-gray-400 hover:text-white"><Edit size={12}/></button>}
             </div>
         </div>
@@ -76,7 +75,7 @@ const ProfilePage = () => {
         {/* Profile Header */}
         <div className="mb-12">
           <div className="h-48 md:h-64 bg-gray-700 rounded-t-2xl bg-cover bg-center" style={{ backgroundImage: `url(${bannerImg})` }}></div>
-          <div className="bg-white/5 backdrop-blur-sm border-x border-b border-blue-500/20 p-6 rounded-b-2xl">
+          <div className="bg-white/5 backdrop-blur-sm border-x border-b border-white/10 p-6 rounded-b-2xl">
             <div className="flex flex-col sm:flex-row">
               <div className="-mt-24 sm:-mt-28 w-32 h-32 sm:w-40 sm:h-40 rounded-full border-4 border-[#080808] overflow-hidden flex-shrink-0">
                 <img src={profileImg} alt={userProfile.name} className="w-full h-full object-cover" />
@@ -110,7 +109,7 @@ const ProfilePage = () => {
         <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
           {/* Left Column (Sidebar) */}
           <div className="md:col-span-1 space-y-8">
-            <div className="bg-white/5 backdrop-blur-sm border border-blue-500/20 p-6 rounded-2xl">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-2xl">
               <h3 className="font-bold text-xl mb-3 text-blue-300">About</h3>
               <p className="text-gray-300 leading-relaxed mb-4">{userProfile.bio}</p>
               
@@ -124,7 +123,7 @@ const ProfilePage = () => {
                   </div>
               </div>
               
-              <div className="pt-4 border-t border-blue-500/20">
+              <div className="pt-4 border-t border-white/10">
                 <h4 className="font-semibold text-gray-300 mb-3">Connect</h4>
                 <div className="flex flex-wrap gap-3">
                   {Object.entries(userProfile.socials).map(([key, link]) => (
@@ -136,7 +135,7 @@ const ProfilePage = () => {
               </div>
             </div>
             
-            <div className="bg-white/5 backdrop-blur-sm border border-blue-500/20 p-6 rounded-2xl">
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-2xl">
               <h3 className="font-bold text-xl mb-4 text-blue-300">Genres</h3>
               <div className="flex flex-wrap gap-2">
                 {userProfile.genres.map(genre => (
@@ -148,8 +147,8 @@ const ProfilePage = () => {
 
           {/* Right Column (Creations Feed) */}
           <div className="md:col-span-2">
-            <div className="bg-white/5 backdrop-blur-sm border border-blue-500/20 p-6 rounded-2xl">
-              <h3 className="font-bold text-2xl mb-6 text-blue-300 border-b border-blue-500/20 pb-4">Spotlight</h3>
+            <div className="bg-white/5 backdrop-blur-sm border border-white/10 p-6 rounded-2xl">
+              <h3 className="font-bold text-2xl mb-6 text-blue-300 border-b border-white/10 pb-4">Spotlight</h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-2 xl:grid-cols-3 gap-4">
                 {highlightedSamples.map(sample => <SampleCard key={sample.id} sample={sample} isOwnSample={isViewingOwnProfile} />)}
               </div>
